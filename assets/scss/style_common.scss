@@ -78,6 +78,12 @@ summary {
 }
 
 /* break point */
+@mixin pc-wide {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
 @mixin pc {
   @media (min-width: 700px) {
     @content;

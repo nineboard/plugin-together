@@ -153,9 +153,11 @@
   }
 
   .thumbnail {
+    position: relative;
     display: block;
     padding-top: 58.5%;
     @extend %thumbnail-background;
+
   }
 
   .item-media:first-child {
@@ -168,7 +170,6 @@
     margin-bottom: 9px;
     padding-top: 16px;
     background: #fff;
-
     @include ellipsis(59px, 16px, 500, 24px, 2);
   }
 
@@ -189,15 +190,6 @@
       clear: both;
     }
 
-    .thumbnail {
-      padding-top: 56.4%;
-      transition: background-size 0.2s ease;
-    }
-
-    .thumbnail:hover {
-      transform:scale(1.05)
-    }
-
     .item-media {
       float: left;
       width: 50%;
@@ -205,6 +197,30 @@
 
     .item-media:first-child {
       margin-bottom: 0;
+    }
+
+    .thumbnail {
+      padding-top: 56.4%;
+      transition: transform 0.2s;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.8);
+        opacity: 0;
+        transition: opacity 0.4s;
+      }
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+      &:after {
+        opacity: 0.3;
+      }
     }
 
     .box-view {
@@ -304,7 +320,7 @@
     }
 
     .thumbnail:hover {
-      transform:scale(1.05)
+      transform: scale(1.05)
     }
   }
 }
@@ -645,9 +661,10 @@
 
   .item-gallery {
     display: inline-block;
-    width: 25%;
+    width: calc(100% / 4);
     margin-bottom: 8px;
     padding: 0 4px;
+    overflow: hidden;
   }
 
   .thumbnail {
@@ -670,6 +687,14 @@
       width: calc(100% / 6);
       margin-bottom: 16px;
       padding: 0 12px;
+    }
+
+    .thumbnail {
+      transition: transform 0.2s;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05)
     }
   }
 }
