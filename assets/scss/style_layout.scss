@@ -1,0 +1,148 @@
+/* body */
+body {
+  font-family: Roboto, "Apple SD Gothic Neo", 'Noto Sans KR', "Malgun Gothic", "맑은 고딕", "Nanum Gothic", Dotum, '돋움', Helvetica, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* html */
+html, body {
+  position: relative;
+  height: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000;
+}
+
+@include pc {
+  html, body {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+#wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+/* container */
+#container {
+  position: relative;
+  width: 100%;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+/* header */
+.header-tfc {
+  position: relative;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+
+  button {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 24px;
+    overflow: visible;
+    cursor: pointer;
+  }
+
+  .btn_menu {
+    left: 0;
+  }
+
+  .btn_search {
+    right: 0;
+  }
+
+  .logo {
+    position: absolute;
+    left: 56px;
+    width: 263px;
+    font-size: 20px;
+  }
+
+  .link_logo {
+    display: block;
+    text-decoration: none;
+    color: #000;
+  }
+}
+
+/* main */
+.main-tfc {
+  position: relative;
+  width: 100%;
+
+  > section:nth-child(n+2) {
+    max-width: 1232px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+  }
+}
+
+/* footer */
+.footer-tfc {
+  margin: 32px 16px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+
+  .inner-footer {
+    max-width: 1232px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  button {
+    width: 24px;
+    height: 18px;
+    margin-right: 5px;
+    font-size: 24px;
+  }
+
+  small {
+    font-size: 12px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.5)
+  }
+
+  .align {
+    display: block;
+  }
+
+  .area_language {
+    margin-top: 16px;
+  }
+}
+
+/* align */
+.area-grid-tfc {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+}
+
+@include pc {
+  .area-grid-tfc {
+    display: flex;
+
+    .section-dday-tfcw {
+      width: 100%;
+    }
+  }
+}

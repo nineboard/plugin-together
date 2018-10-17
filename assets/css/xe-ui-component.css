@@ -1,0 +1,144 @@
+.xe-badge {
+  display: inline-block;
+  vertical-align: baseline;
+  transition: background .1s ease;
+  font-size: 10px;
+  min-width: 2em;
+  min-height: 2em;
+  padding: .5em .7em;
+  border-radius: 500rem;
+  border: 1px solid transparent;
+  line-height: 1em;
+  text-align: center;
+  color: #fff
+}
+
+.xe-badge.medium {
+  min-width: 2.1em;
+  min-height: 2.1em;
+  line-height: 1.1em;
+  font-size: 11px
+}
+
+.xe-badge.large {
+  min-width: 2.2em;
+  min-height: 2.2em;
+  line-height: 1.2em;
+  font-size: 12px
+}
+
+.xe-badge.empty {
+  min-width: 0;
+  min-height: 0;
+  line-height: 0;
+  font-size: inherit;
+  padding: 4px
+}
+
+.xe-badge.floating {
+  position: absolute;
+  font-size: 10px;
+  top: -.5em;
+  left: 100%;
+  margin: 0 0 0 -1.5em
+}
+
+.xe-badge.xe-primary {
+  background-color: #2c8beb
+}
+
+.xe-badge.xe-primary:hover {
+  background-color: #167ee8
+}
+
+.xe-badge.xe-success {
+  background-color: #5cb85c
+}
+
+.xe-badge.xe-success:hover {
+  background-color: #4cae4c
+}
+
+.xe-badge.xe-positive {
+  background-color: #5bc0de
+}
+
+.xe-badge.xe-positive:hover {
+  background-color: #46b8da
+}
+
+.xe-badge.xe-warning {
+  background-color: #f0ad4e
+}
+
+.xe-badge.xe-warning:hover {
+  background-color: #eea236
+}
+
+.xe-badge.xe-danger {
+  background-color: #d9534f
+}
+
+.xe-badge.xe-danger:hover {
+  background-color: #d43f3a
+}
+
+.xe-badge.xe-fail {
+  background-color: #6c57d9
+}
+
+.xe-badge.xe-fail:hover {
+  background-color: #5a42d4
+}
+
+.xe-badge.xe-black {
+  background-color: #3c414d
+}
+
+.xe-badge.xe-black:hover {
+  background-color: #31353f
+}
+
+.xe-badge.xe-primary-outline {
+  color: #2c8beb;
+  background-color: transparent;
+  border: 1px solid #2c8beb
+}
+
+.xe-badge.xe-success-outline {
+  color: #5cb85c;
+  background-color: transparent;
+  border: 1px solid #5cb85c
+}
+
+.xe-badge.xe-positive-outline {
+  color: #5bc0de;
+  background-color: transparent;
+  border: 1px solid #5bc0de
+}
+
+.xe-badge.xe-warning-outline {
+  color: #f0ad4e;
+  background-color: transparent;
+  border: 1px solid #f0ad4e
+}
+
+.xe-badge.xe-danger-outline {
+  color: #d9534f;
+  background-color: transparent;
+  border: 1px solid #d9534f
+}
+
+.xe-badge.xe-fail-outline {
+  color: #6c57d9;
+  background-color: transparent;
+  border: 1px solid #6c57d9
+}
+
+.xe-badge.xe-black-outline {
+  color: #3c414d;
+  background-color: transparent;
+  border: 1px solid #3c414d
+}
+
+/*!

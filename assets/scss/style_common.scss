@@ -1,0 +1,85 @@
+/* common */
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* reset */
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reset-button {
+  button {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+/* blind */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px
+}
+
+/* ellipsis */
+@mixin ellipsis ($maxheight, $fontsize, $fontweight, $lineheight, $webkitline) {
+  max-height: $maxheight;
+  font-size: $fontsize;
+  font-weight: $fontweight;
+  line-height: $lineheight;
+  -webkit-line-clamp: $webkitline;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+@mixin ellipsis-1line ($fontsize, $lineheight) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin dimmed-before ($start, $opacity-top, $opacity-bottom) {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to $start, rgba(0, 0, 0, $opacity-top), rgba(0, 0, 0, $opacity-bottom));
+}
+
+/* thumbnail background */
+%thumbnail-background {
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+/* break point */
+@mixin pc {
+  @media (min-width: 700px) {
+    @content;
+  }
+}
