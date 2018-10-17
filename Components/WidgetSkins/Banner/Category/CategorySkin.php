@@ -1,14 +1,17 @@
 <?php
-namespace Xpressengine\plugins\TheNextMagazine\Components\WidgetSkins\Banner\Skins\About;
+namespace Xpressengine\Plugins\Together\Components\WidgetSkins\Banner\Category;
 
 use Xpressengine\Skin\GenericSkin;
 use View;
 
 use Xpressengine\Plugins\Banner\BannerWidgetSkin;
 
-class AboutSkin extends BannerWidgetSkin
+class CategorySkin extends BannerWidgetSkin
 {
-    protected static $path = 'the_next_magazine/Components/WidgetSkins/Banner/Skins/About';
+    /**
+     * @var string
+     */
+    protected static $path = 'together/Components/WidgetSkins/Banner/Category';
 
     public static function getBannerInfo($key = null)
     {
@@ -22,10 +25,6 @@ class AboutSkin extends BannerWidgetSkin
     {
         return '';
     }
-
-    /**
-     * @var string
-     */
 
     static public function getPath()
     {

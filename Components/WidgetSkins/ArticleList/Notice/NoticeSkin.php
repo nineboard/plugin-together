@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\plugins\Together\Components\WidgetSkins\ArticleList;
+namespace Xpressengine\Plugins\Together\Components\WidgetSkins\ArticleList\Notice;
 
 use Xpressengine\Skin\GenericSkin;
 use View;

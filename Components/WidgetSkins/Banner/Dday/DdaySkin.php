@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\plugins\TheNextMagazine\Components\WidgetSkins\Banner\Skins\Dday;
+namespace Xpressengine\Plugins\Together\Components\WidgetSkins\Banner\Dday;
 
 use Xpressengine\Skin\GenericSkin;
 use View;
@@ -8,7 +8,7 @@ use Xpressengine\Plugins\Banner\BannerWidgetSkin;
 
 class DdaySkin extends BannerWidgetSkin
 {
-    protected static $path = 'the_next_magazine/Components/WidgetSkins/Banner/Skins/Dday';
+    protected static $path = 'together/Components/WidgetSkins/Banner/Skins/Dday';
 
     public static function getBannerInfo($key = null)
     {

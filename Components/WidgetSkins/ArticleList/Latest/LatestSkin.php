@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\plugins\Together\Components\WidgetSkins\ArticleList\Latest;
+namespace Xpressengine\Plugins\Together\Components\WidgetSkins\ArticleList\Latest;
 
 use Xpressengine\Skin\GenericSkin;
 use View;

@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\plugins\Together\Components\WidgetSkins\ArticleList\Gallery;
+namespace Xpressengine\Plugins\Together\Components\WidgetSkins\ArticleList\Gallery;
 
 use Xpressengine\Skin\GenericSkin;
 use View;
