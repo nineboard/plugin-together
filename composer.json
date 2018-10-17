@@ -1,0 +1,48 @@
+{
+  "name": "xpressengine-plugin/together",
+  "description": "Together 테마와 이와 잘 어울리는 위젯 스킨을 포함하고 있습니다",
+  "keywords": [
+    "xpressengine",
+    "xpressengine-plugin",
+    "xpressengine-theme",
+    "xe"
+  ],
+  "license": "LGPL-2.1-or-later",
+  "version": "1.0.0",
+  "type": "xpressengine-plugin",
+  "support": {
+    "email": "developers@xpressengine.com"
+  },
+  "authors": [
+    {
+      "name": "XpressEngine",
+      "email": "developers@xpressengine.com",
+      "homepage": "https://www.xpressengine.io",
+      "role": "Developer"
+    }
+  ],
+  "extra": {
+    "xpressengine": {
+      "title": "Together",
+      "component": {
+        "theme/together@tnm": {
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Theme\\Theme",
+          "name": "Together",
+          "description": "Together"
+        }
+      }
+    }
+  },
+  "require": {
+    "xpressengine-plugin/board": "*",
+    "xpressengine-plugin/banner": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Xpressengine\\Plugins\\Together\\": "./"
+    },
+    "classmap": [
+      "Components/Theme/Theme.php"
+    ]
+  }
+}
