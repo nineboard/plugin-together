@@ -40,21 +40,56 @@ return [
                 'logoText' => [
                     '_type' => 'langText',
                     'label' => 'Logo 텍스트',
-                    'placeholder' => '상단에 표시될 사이트 이름 및 로고 이미지의 대체 텍스트',
+                    'description' => '상단에 표시될 사이트 이름 및 로고 이미지의 대체 텍스트',
                 ],
                 'logoImage' => [
                     '_type' => 'image',
                     'label' => 'Logo 이미지',
-                    'description' => '흰색 배경용 로고 이미지'
+                    'description' => 'Logo 이미지'
                 ],
-                'logoImageWithBg' => [
-                    '_type' => 'image',
-                    'label' => 'Logo 이미지',
-                    'description' => '컬러셋 색상 배경용 로고 이미지 (밝은색 및 투명 PNG 이미지 권장)'
+                'slogan' => [
+                    '_type' => 'langText',
+                    'label' => 'slogan',
+                    'description' => 'slogan',
                 ],
                 'mainMenu' => [
                     '_type' => 'menu',
                     'label' => '메인 메뉴 (GNB. 3 depth)',
+                ],
+            ]
+        ],
+
+        /* 메인페이지 설정 */
+        [
+            'section' => [
+                'class' => 'main-section',
+                'title' => '메인페이지 설정'
+            ],
+            'fields' => [
+                'useMainHeader' => [
+                    '_type' => 'select',
+                    'label' => 'useMainHeader',
+                    'options' => [
+                        'Y' => '표시함',
+                        'N' => '표시 안 함'
+                    ],
+                    'description' => '메인 Header 사용함?'
+                ],
+                /* 헤더 이미지 설정 */
+                'headerImage' => [
+                    '_type' => 'image',
+                    'label' => 'Header 이미지',
+                    'description' => 'Header 이미지'
+                ],
+                'headerTitle' => [
+                    '_type' => 'langText',
+                    'label' => 'headerTitle',
+                    'description' => 'headerTitle',
+                ],
+                'headerDescription' => [
+                    '_type' => 'langText',
+                    'label' => 'headerDescription',
+                    'description' => 'headerDescription',
                 ],
             ]
         ],
@@ -81,6 +116,32 @@ return [
             ]
         ],
 
+        /* social link */
+        [
+            'section' => [
+                'class' => 'social-section',
+                'title' => 'social 설정'
+            ],
+            'fields' => [
+                'socialTwitter' => [
+                    '_type' => 'text',
+                    'label' => 'socialTwitter',
+                ],
+                'socialYoutube' => [
+                    '_type' => 'text',
+                    'label' => 'socialYoutube',
+                ],
+                'socialInstagram' => [
+                    '_type' => 'text',
+                    'label' => 'socialInstagram',
+                ],
+                'socialFacebook' => [
+                    '_type' => 'text',
+                    'label' => 'socialFacebook',
+                ]
+            ]
+        ],
+
         /* Footer 설정 */
         [
             'section' => [
@@ -88,14 +149,9 @@ return [
                 'title' => 'footer 설정'
             ],
             'fields' => [
-                'footerMenu' => [
-                    '_type' => 'menu',
-                    'label' => 'footer 메뉴 (FNB. 1 depth)',
-                ],
-                /* footer 설정 */
                 'useCopyright' => [
                     '_type' => 'select',
-                    'label' => '푸터 영역 사용 여부',
+                    'label' => 'Copyright 표시 여부',
                     'options' => [
                         'Y' => '사용',
                         'N' => '사용 안함'
@@ -105,7 +161,7 @@ return [
                     '_type' => 'textarea',
                     'label' => '카피라이트',
                     'description' => 'HTML사용 가능'
-                ],
+                ]
             ]
         ],
     ],
