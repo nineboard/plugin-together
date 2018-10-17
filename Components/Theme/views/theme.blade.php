@@ -9,21 +9,18 @@ TOGETHER.theme
 
 {{-- stylesheet --}}
 {{ app('xe.frontend')->css([
-    asset('plugins/the_next_magazine/assets/tnm.css'),
-    asset('plugins/the_next_magazine/assets/tnm-widget.css'),
-    // asset('plugins/the_next_magazine/assets/style.css'),
-    // asset('plugins/the_next_magazine/assets/postBtn.css'),
+    $_theme::asset('../../../assets/css/style.css'),
 ])->load() }}
 
 {{-- script --}}
 {{ app('xe.frontend')->js([
-    asset('plugins/the_next_magazine/assets/common.js'),
+    $_theme::asset('../../../assets/images/common.js'),
 ])->appendTo('head')->load() }}
 
-@if($config->get('logoImageWithBg.path'))
+{{-- @if($config->get('logoImageWithBg.path'))
     {{ app('xe.frontend')->preload()
         ->href($config->get('logoImageWithBg.path'))
         ->as('image')
         ->load()
     }}
-@endif
+@endif --}}
