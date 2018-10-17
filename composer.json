@@ -25,10 +25,40 @@
     "xpressengine": {
       "title": "Together",
       "component": {
-        "theme/together@tnm": {
+        "theme/together@together": {
           "class": "Xpressengine\\Plugins\\Together\\Components\\Theme\\Theme",
           "name": "Together",
           "description": "Together"
+        },
+        "widget/board@list/skin/together@gallery": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Gallery\\GallerySkin",
+          "name": "Together-gallery 스킨",
+          "description": "Together-gallery 스킨"
+        },
+        "widget/board@list/skin/together@latest": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Latest\\LatestSkin",
+          "name": "Together-latest 스킨",
+          "description": "Together-latest 스킨"
+        },
+        "widget/board@list/skin/together@media": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Media\\MediaSkin",
+          "name": "Together-media 스킨",
+          "description": "Together-media 스킨"
+        },
+        "widget/board@list/skin/together@notice": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Notice\\NoticeSkin",
+          "name": "Together-notice 스킨",
+          "description": "Together-notice 스킨"
+        },
+        "widget/banner@widget/skin/together@category": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\Banner\\Category\\CategorySkin",
+          "name": "Together-Category 스킨",
+          "description": "Together-Category 스킨"
+        },
+        "widget/banner@widget/skin/together@dday": {
+          "class": "Xpressengine\\plugins\\Together\\Components\\WidgetSkins\\Banner\\Dday\\DdaySkin",
+          "name": "Together-Dday 스킨",
+          "description": "Together-Dday 스킨"
         }
       }
     }
@@ -42,7 +72,13 @@
       "Xpressengine\\Plugins\\Together\\": "./"
     },
     "classmap": [
-      "Components/Theme/Theme.php"
+      "Components/Theme/Theme.php",
+      "Components/WidgetSkins/ArticleList/Gallery/GallerySkin.php",
+      "Components/WidgetSkins/ArticleList/Latest/LatestSkin.php",
+      "Components/WidgetSkins/ArticleList/Media/MediaSkin.php",
+      "Components/WidgetSkins/ArticleList/Notice/NoticeSkin.php",
+      "Components/WidgetSkins/Banner/Category/CategorySkin.php",
+      "Components/WidgetSkins/Banner/Dday/DdaySkin.php"
     ]
   }
 }
