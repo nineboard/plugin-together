@@ -12,7 +12,7 @@
   @extend %thumbnail-background;
 
   &:before {
-    @include dimmed-before(top, 0.4, 0)
+    @include dimmed-gradient(top, 0.4, 0)
   }
 
   .inner-section-theme-basic {
@@ -68,7 +68,7 @@
   }
 }
 
-/* area-switch-tfc */
+/* section-switch-tfc */
 .section-switch-tfc {
   margin-bottom: 32px;
 
@@ -102,7 +102,7 @@
   }
 }
 
-/* media query - section-category-tfcw */
+/* media query - section-switch-tfc */
 @include pc {
   .section-switch-tfc {
     margin-bottom: 32px;
@@ -118,21 +118,6 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -203,17 +188,7 @@
       padding-top: 56.4%;
       transition: transform 0.2s;
 
-      &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.8);
-        opacity: 0;
-        transition: opacity 0.4s;
-      }
+      @include thumbnail-dimmed;
     }
 
     .thumbnail:hover {
@@ -228,18 +203,6 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -312,27 +275,22 @@
     }
 
     .thumbnail {
-      transition: transform 0.2s;
+      position: relative;
+      @include thumbnail-dimmed;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+      &:after {
+        opacity: 0.3;
+      }
     }
 
     .text-category {
       line-height: 24px;
     }
-
-    .thumbnail:hover {
-      transform: scale(1.05)
-    }
   }
 }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -349,7 +307,7 @@
     text-decoration: none;
 
     &:before {
-      @include dimmed-before(top, 0.4, 0)
+      @include dimmed-gradient(top, 0.4, 0)
     }
   }
 
@@ -414,23 +372,6 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -503,6 +444,7 @@
     }
 
     .thumbnail {
+      position: relative;
       width: 60px;
       height: 60px;
     }
@@ -522,22 +464,6 @@
     }
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -616,21 +542,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* section-gallery-tfcw */
 .section-gallery-tfcw {
   margin-bottom: 32px;
@@ -690,11 +601,15 @@
     }
 
     .thumbnail {
-      transition: transform 0.2s;
+      position: relative;
+      @include thumbnail-dimmed;
     }
 
     .thumbnail:hover {
-      transform: scale(1.05)
+      transform: scale(1.05);
+      &:after {
+        opacity: 0.3;
+      }
     }
   }
 }
