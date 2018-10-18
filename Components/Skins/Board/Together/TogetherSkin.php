@@ -21,7 +21,7 @@ use Xpressengine\Routing\InstanceConfig;
 
 class TogetherSkin extends GenericBoardSkin
 {
-    protected static $path = 'board/components/Skins/Board/Common';
+    protected static $path = 'together/components/Skins/Board/Together';
 
     /**
      * @var array
@@ -68,7 +68,7 @@ class TogetherSkin extends GenericBoardSkin
     {
         intercept(
             DynamicFieldHandler::class . '@create',
-            'board@commonSkin::createDynamicField',
+            'board@togetherSkin::createDynamicField',
             function ($func, ConfigEntity $config, ColumnEntity $column = null) {
                 $func($config, $column);
 
@@ -126,17 +126,17 @@ class TogetherSkin extends GenericBoardSkin
         $this->data['isManager'] = $this->isManager();
 
         /**
-         * If view file is not 'index.blade.php' then change view path to CommonSkin's path.
-         * CommonSkin extends by other Skins. Extended Skin can make just 'index.blade.php'
-         * and other blade files will use to CommonSkin's blade files.
+         * If view file is not 'index.blade.php' then change view path to TogetherSkin's path.
+         * TogetherSkin extends by other Skins. Extended Skin can make just 'index.blade.php'
+         * and other blade files will use to TogetherSkin's blade files.
          */
 //        if ($this->view != 'index') {
 //            static::$path = self::$path;
 //        }
         /**
-         * If view file is not exists to extended skin component then change view path to CommonSkin's path.
-         * CommonSkin extends by other Skins. Extended Skin can make own blade files.
-         * If not make blade file then use to CommonSkin's blade files.
+         * If view file is not exists to extended skin component then change view path to TogetherSkin's path.
+         * TogetherSkin extends by other Skins. Extended Skin can make own blade files.
+         * If not make blade file then use to TogetherSkin's blade files.
          */
         if (View::exists(sprintf('%s/views/%s', static::$path, $this->view)) == false) {
             static::$path = self::$path;
@@ -146,14 +146,14 @@ class TogetherSkin extends GenericBoardSkin
 
         /**
          * If render type is not for Presenter::RENDER_CONTENT
-         * then use CommonSkin's '_frame.blade.php' for layout.
+         * then use TogetherSkin's '_frame.blade.php' for layout.
          * '_frame.blade.php' has assets load script like js, css.
          */
         if (XePresenter::getRenderType() == Presenter::RENDER_CONTENT) {
             $view = $contentView;
         } else {
             // wrapped by _frame.blade.php
-            $view = View::make(sprintf('%s/views/_frame', CommonSkin::$path), $this->data);
+            $view = View::make(sprintf('%s/views/_frame', TogetherSkin::$path), $this->data);
             $view->content = $contentView;
         }
 
@@ -301,7 +301,7 @@ class TogetherSkin extends GenericBoardSkin
 //            $arr = explode(':', request()->get('instanceId'));
 //            $instanceId = $arr[1];
 //
-//            return View::make(sprintf('%s/views/setting', CommonSkin::$path), [
+//            return View::make(sprintf('%s/views/setting', TogetherSkin::$path), [
 //                'sortListColumns' => $this->getSortListColumns($config, $instanceId),
 //                'sortFormColumns' => $this->getSortFormColumns($config, $instanceId),
 //                'config' => $config

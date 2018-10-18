@@ -75,16 +75,6 @@
   "autoload": {
     "psr-4": {
       "Xpressengine\\Plugins\\Together\\": "./"
-    },
-    "classmap": [
-      "Components/Theme/Theme.php",
-      "Components/Skins/Board/Together/TogetherSkin.php",
-      "Components/Skins/ArticleList/Gallery/GallerySkin.php",
-      "Components/Skins/ArticleList/Latest/LatestSkin.php",
-      "Components/Skins/ArticleList/Media/MediaSkin.php",
-      "Components/Skins/ArticleList/Notice/NoticeSkin.php",
-      "Components/Skins/Banner/Category/CategorySkin.php",
-      "Components/Skins/Banner/Dday/DdaySkin.php"
-    ]
+    }
   }
 }
