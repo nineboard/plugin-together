@@ -1,1 +1,3 @@
-TOGETHER.footer
+<footer class="footer-tfc">
+    #FOOTER
+</footer>
