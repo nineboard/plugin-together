@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\Plugins\Together\Components\WidgetSkins\Banner\Category;
+namespace Xpressengine\Plugins\Together\Components\Skins\Banner\Category;
 
 use Xpressengine\Skin\GenericSkin;
 use View;
@@ -11,7 +11,7 @@ class CategorySkin extends BannerWidgetSkin
     /**
      * @var string
      */
-    protected static $path = 'together/Components/WidgetSkins/Banner/Category';
+    protected static $path = 'together/Components/Skins/Banner/Category';
 
     public static function getBannerInfo($key = null)
     {

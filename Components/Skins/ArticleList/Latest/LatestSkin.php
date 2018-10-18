@@ -1,5 +1,5 @@
 <?php
-namespace Xpressengine\Plugins\Together\Components\WidgetSkins\ArticleList\Latest;
+namespace Xpressengine\Plugins\Together\Components\Skins\ArticleList\Latest;
 
 use Xpressengine\Skin\GenericSkin;
 use View;
@@ -9,7 +9,7 @@ class LatestSkin extends GenericSkin
     /**
      * @var string
      */
-    protected static $path = 'together/Components/WidgetSkins/ArticleList/LatestSkin';
+    protected static $path = 'together/Components/Skins/ArticleList/LatestSkin';
 
     static public function getPath()
     {

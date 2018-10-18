@@ -30,33 +30,38 @@
           "name": "Together",
           "description": "Together"
         },
+        "module/board@board/skin/together@board": {
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\Board\\Together\\TogetherSkin",
+          "name": "Together 게시판 스킨",
+          "description": "Together 게시판 스킨"
+        },
         "widget/board@list/skin/together@gallery": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Gallery\\GallerySkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Gallery\\GallerySkin",
           "name": "Together-gallery 스킨",
           "description": "Together-gallery 스킨"
         },
         "widget/board@list/skin/together@latest": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Latest\\LatestSkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Latest\\LatestSkin",
           "name": "Together-latest 스킨",
           "description": "Together-latest 스킨"
         },
         "widget/board@list/skin/together@media": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Media\\MediaSkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Media\\MediaSkin",
           "name": "Together-media 스킨",
           "description": "Together-media 스킨"
         },
         "widget/board@list/skin/together@notice": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\ArticleList\\Notice\\NoticeSkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Notice\\NoticeSkin",
           "name": "Together-notice 스킨",
           "description": "Together-notice 스킨"
         },
         "widget/banner@widget/skin/together@category": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\Banner\\Category\\CategorySkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\Banner\\Category\\CategorySkin",
           "name": "Together-Category 스킨",
           "description": "Together-Category 스킨"
         },
         "widget/banner@widget/skin/together@dday": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\WidgetSkins\\Banner\\Dday\\DdaySkin",
+          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\Banner\\Dday\\DdaySkin",
           "name": "Together-Dday 스킨",
           "description": "Together-Dday 스킨"
         }
@@ -70,15 +75,6 @@
   "autoload": {
     "psr-4": {
       "Xpressengine\\Plugins\\Together\\": "./"
-    },
-    "classmap": [
-      "Components/Theme/Theme.php",
-      "Components/WidgetSkins/ArticleList/Gallery/GallerySkin.php",
-      "Components/WidgetSkins/ArticleList/Latest/LatestSkin.php",
-      "Components/WidgetSkins/ArticleList/Media/MediaSkin.php",
-      "Components/WidgetSkins/ArticleList/Notice/NoticeSkin.php",
-      "Components/WidgetSkins/Banner/Category/CategorySkin.php",
-      "Components/WidgetSkins/Banner/Dday/DdaySkin.php"
-    ]
+    }
   }
 }
