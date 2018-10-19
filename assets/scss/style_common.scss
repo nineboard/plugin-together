@@ -61,7 +61,7 @@ summary {
   overflow: hidden;
 }
 
-@mixin dimmed-before ($start, $opacity-top, $opacity-bottom) {
+@mixin dimmed-gradient ($start, $opacity-top, $opacity-bottom) {
   content: '';
   position: absolute;
   top: 0;
@@ -69,6 +69,20 @@ summary {
   left: 0;
   right: 0;
   background-image: linear-gradient(to $start, rgba(0, 0, 0, $opacity-top), rgba(0, 0, 0, $opacity-bottom));
+}
+
+@mixin thumbnail-dimmed {
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
 }
 
 /* thumbnail background */
@@ -86,6 +100,12 @@ summary {
 
 @mixin pc {
   @media (min-width: 700px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 699px) {
     @content;
   }
 }
