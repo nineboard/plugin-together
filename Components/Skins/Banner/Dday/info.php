@@ -4,7 +4,8 @@ return [
         'image' => [
             'width' => '400',
             'height' => '300'
-        ]
+        ],
+        'use_timer' => 0
     ],
     'support' => [
         'mobile' => true,

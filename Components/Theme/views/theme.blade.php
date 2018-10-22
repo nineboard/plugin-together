@@ -8,9 +8,12 @@
 {{-- stylesheet --}}
 {{ app('xe.frontend')->css([
     $_theme::asset('../../../assets/css/style.css'),
+    $_theme::asset('../../../assets/css/style_icon.css'),
+    $_theme::asset('../../../assets/libs/slick/slick.css')
 ])->load() }}
 
 {{-- script --}}
 {{ app('xe.frontend')->js([
-    $_theme::asset('../../../assets/images/common.js'),
+    $_theme::asset('../../../assets/libs/slick/slick.min.js'),
+    $_theme::asset('../../../assets/js/common.js'),
 ])->appendTo('head')->load() }}

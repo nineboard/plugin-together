@@ -9,10 +9,5 @@ class NoticeSkin extends GenericSkin
     /**
      * @var string
      */
-    protected static $path = 'together/Components/Skins/ArticleList/NoticeSkin';
-
-    static public function getPath()
-    {
-        return 'plugins/together';
-    }
+    protected static $path = 'together/Components/Skins/ArticleList/Notice';
 }

@@ -11,7 +11,7 @@ class DdaySkin extends BannerWidgetSkin
     /**
      * @var string
      */
-    protected static $path = 'together/Components/Skins/Banner/Skins/Dday';
+    protected static $path = 'together/Components/Skins/Banner/Dday';
 
     public static function getBannerInfo($key = null)
     {
@@ -21,13 +21,8 @@ class DdaySkin extends BannerWidgetSkin
         return static::info('banner'.$key);
     }
 
-    public function renderBannerSetting()
+    public function renderBannerSetting($items = null)
     {
-        return '';
-    }
-
-    static public function getPath()
-    {
-        return 'plugins/' . static::$path;
+        return $view = View::make(sprintf('%s/views/setting', static::$path), [ 'item' => $items ]);
     }
 }

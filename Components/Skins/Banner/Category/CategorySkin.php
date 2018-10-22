@@ -25,9 +25,4 @@ class CategorySkin extends BannerWidgetSkin
     {
         return '';
     }
-
-    static public function getPath()
-    {
-        return 'plugins/' . static::$path;
-    }
 }

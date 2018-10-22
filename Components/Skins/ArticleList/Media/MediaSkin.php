@@ -9,10 +9,5 @@ class MediaSkin extends GenericSkin
     /**
      * @var string
      */
-    protected static $path = 'together/Components/Skins/ArticleList/MediaSkin';
-
-    static public function getPath()
-    {
-        return 'plugins/together';
-    }
+    protected static $path = 'together/Components/Skins/ArticleList/Media';
 }

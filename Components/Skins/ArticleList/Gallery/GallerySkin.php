@@ -10,9 +10,4 @@ class GallerySkin extends GenericSkin
      * @var string
      */
     protected static $path = 'together/Components/Skins/ArticleList/Gallery';
-
-    static public function getPath()
-    {
-        return 'plugins/together';
-    }
 }
