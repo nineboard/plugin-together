@@ -56,8 +56,15 @@ html, body {
     border-radius: 0;
     background-color: transparent;
     font-size: 24px;
+    color: rgba(0, 0, 0, .4);
     overflow: visible;
     cursor: pointer;
+    outline: none;
+  }
+
+  button:hover {
+    color: rgba(0, 0, 0, 1);
+    transition: 0.2s;
   }
 
   .btn-menu {
@@ -69,9 +76,15 @@ html, body {
     width: auto;
     right: 0;
     padding-right: 20px;
+    line-height: 57px;
+    color: rgba(0, 0, 0, .6)
+  }
+
+  .text_login {
+    padding-left: 8px;
     font-size: 14px;
     font-weight: 500;
-    color: rgba(0, 0, 0, .7)
+    vertical-align: 5px;
   }
 
   .logo {
@@ -87,11 +100,16 @@ html, body {
 
   .link-logo {
     display: block;
+    font-size: 22px;
     text-decoration: none;
     color: #000;
   }
+
+  .greet {
+    display: none;
+  }
 }
-@include pc {
+@include pc-wide {
   .header-tfc {
 
     .greet {
