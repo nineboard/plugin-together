@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'xethem2';
-  src:  url('../fonts/xethem2.eot?u0bpea');
-  src:  url('../fonts/xethem2.eot?u0bpea#iefix') format('embedded-opentype'),
-    url('../fonts/xethem2.ttf?u0bpea') format('truetype'),
-    url('../fonts/xethem2.woff?u0bpea') format('woff'),
-    url('../fonts/xethem2.svg?u0bpea#xethem2') format('svg');
+  src:  url('../fonts/xethem2.eot?v0yhfp');
+  src:  url('../fonts/xethem2.eot?v0yhfp#iefix') format('embedded-opentype'),
+    url('../fonts/xethem2.ttf?v0yhfp') format('truetype'),
+    url('../fonts/xethem2.woff?v0yhfp') format('woff'),
+    url('../fonts/xethem2.svg?v0yhfp#xethem2') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon_login:before {
+  content: "\e958";
+}
 .icon_sns_twitter:before {
   content: "\e900";
 }

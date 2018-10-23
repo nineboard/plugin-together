@@ -62,16 +62,26 @@ html, body {
 
   .btn-menu {
     left: 0;
+    line-height: 59px;
   }
 
-  .btn-search {
+  .btn-login {
+    width: auto;
     right: 0;
+    padding-right: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .7)
   }
 
   .logo {
     position: absolute;
+    display: flex;
+    align-items: center;
+
     left: 56px;
-    width: 263px;
+    height: 56px;
+    margin: 0;
     font-size: 20px;
   }
 
@@ -81,13 +91,26 @@ html, body {
     color: #000;
   }
 }
+@include pc {
+  .header-tfc {
+
+    .greet {
+      display: inline-block;
+      margin-left: 24px;
+      padding-top: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, .6);
+    }
+  }
+}
 
 /* main */
 .main-tfc {
   position: relative;
   width: 100%;
 
-  > section:nth-child(n+2) {
+  .theme_container {
     max-width: 1232px;
     margin-left: auto;
     margin-right: auto;
@@ -101,7 +124,7 @@ html, body {
 
   .inner-footer {
     max-width: 1232px;
-    margin: 32px auto;
+    margin: 0 auto;
     padding: 32px 0;
     border-top: 1px solid rgba(0, 0, 0, 0.2);
   }
@@ -128,26 +151,34 @@ html, body {
   }
 }
 
-/* align */
-.area-grid-tfc {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 80px auto;
+@include pc {
+  .footer-tfc {
+
+    .inner-footer {
+      padding: 80px 0;
+    }
+
+    small {
+      font-size: 14px;
+      line-height: 24px;
+    }
+
+    .align {
+      display: initial;
+    }
+  }
 }
 
-@include pc-wide {
-  .area-grid-tfc {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-gap: 28px;
+/* main */
+.main-tfc {
+  position: relative;
+  width: 100%;
 
-
-    display: -ms-grid;
-    -ms-grid-columns: 3fr 1fr;
-
-    .section-dday-tfcw {
-      width: 100%;
-    }
+  .theme_container {
+    max-width: 1232px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
   }
 }
 
