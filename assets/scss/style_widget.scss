@@ -39,6 +39,21 @@
     font-size: 13px;
     color: rgba(0, 0, 0, 0.4)
   }
+
+  .date {
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .date:before {
+    content: '·';
+    position: absolute;
+    top: -2px;
+    bottom: 0;
+    left: 2px;
+    right:0;
+
+  }
 }
 
 /* media query - section-media-tfcw */
@@ -101,7 +116,6 @@
   .item-category {
     width: calc(100%/2 - 8px);
     margin: 0 4px 32px 4px;
-    margin-bottom: 32px;
   }
 
   .link-category {
@@ -202,23 +216,22 @@
   }
 
   .box-dday {
+    display: flex;
     width: 100%;
-    font-size: 0;
   }
 
   .text-dday {
-    display: inline-block !important;
     width: 60%;
     @include ellipsis(36px, 14px, 500, 20px, 2);
     vertical-align: bottom;
   }
 
   .num-dday {
-    display: inline-block;
     width: 40%;
     font-size: 34px;
-    line-height: 42px;
+    line-height: 40px;
     text-align: right;
+    letter-spacing: -1px;
   }
 }
 
@@ -246,6 +259,7 @@
     .num-dday {
       font-size: 50px;
       font-weight: bold;
+      line-height: 47px;
     }
   }
 }
@@ -399,6 +413,21 @@
   .box-notice {
     font-size: 13px;
     color: rgba(0, 0, 0, 0.4)
+  }
+
+  .date {
+    position: relative;
+    padding-left: 10px;
+  }
+
+  .date:before {
+    content: '·';
+    position: absolute;
+    top: -2px;
+    bottom: 0;
+    left: 2px;
+    right:0;
+
   }
 }
 
