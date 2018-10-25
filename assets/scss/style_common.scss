@@ -100,13 +100,13 @@ summary {
 }
 
 @mixin pc {
-  @media (min-width: 700px) {
+  @media (min-width: 960px) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media (max-width: 699px) {
+  @media (max-width: 959px) {
     @content;
   }
 }

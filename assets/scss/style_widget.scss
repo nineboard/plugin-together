@@ -78,8 +78,6 @@
 
     .thumbnail {
       padding-top: 56.4%;
-      transition: transform 0.2s;
-
       @include thumbnail-dimmed;
     }
 
