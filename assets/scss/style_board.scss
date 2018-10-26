@@ -63,6 +63,10 @@
     overflow: hidden;
   }
 
+  .box-board {
+    position: relative;
+  }
+
   .thumbnail {
     position: relative;
     display: block;
@@ -72,18 +76,14 @@
     @include thumbnail-dimmed;
   }
 
-  .thumbnail:hover {
-    transform: scale(1.05);
-    &:after {
-      opacity: 0.3;
-    }
-  }
-
   .title-board {
+    display: block;
+    background: #fff;
     color: rgba(0, 0, 0, 1)
   }
 
   .text-board {
+    display: block;
     color: rgba(0, 0, 0, .8)
   }
 
@@ -148,6 +148,20 @@
       &:hover {
         border: 1px solid rgba(0, 0, 0, 0.8);
         color: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+
+    .link-board:hover, .link-slide:hover {
+      .thumbnail {
+        transform: scale(1.05);
+        &:after {
+          opacity: 0.3;
+        }
+      }
+
+      .text-board {
+        color: rgba(0, 0, 0, .5)
       }
     }
 
@@ -239,14 +253,12 @@
     height: 64px;
     margin: 16px 0 8px 0;
     @include ellipsis(64px, 24px, 600, 32px, 2);
-    color: rgba(0, 0, 0, 1)
   }
 
   .text-board {
     display: block!important;
     margin: 8px 0;
     @include ellipsis(38px, 14px, 400, 20px, 2);
-    color: rgba(0, 0, 0, .8)
   }
 
   .area-paging {
@@ -291,8 +303,10 @@
     }
 
     .box-board {
+      position: relative;
       width: calc(50% - 64px);
       padding-left: 64px;
+      background: #fff;
       overflow: hidden;
     }
 
@@ -305,7 +319,7 @@
     }
 
     .text-board {
-      max-height: 67px;
+      max-height: 70px;
       margin-bottom: 56px;
       font-size: 16px;
       line-height: 24px;
@@ -337,27 +351,32 @@
   .item-board {
     width: calc(100%/2 - 16px);
     margin: 0 8px 32px 8px;
+    overflow: hidden;
   }
 
   .thumbnail {
     padding-top: 58.5%;
   }
 
+  .box-board {
+    padding-top: 16px;
+    background: #fff;
+  }
+
   .title-board {
     height: 36px;
-    margin: 16px 0 8px 0;
+    margin-bottom: 8px;
     @include ellipsis(38px, 14px, 600, 20px, 2);
-    color: rgba(0, 0, 0, 1)
   }
 }
 
 /* media query - type-gallery-tfc */
 @include pc {
   .type-gallery-tfc {
-    margin: 0 -16px 102px -16px;
+    margin: 0 -16px 0 -16px;
 
     .item-board {
-      width: calc(100%/3 - 32px);
+      width: calc(33.3% - 32px);
       margin: 0 16px 32px 16px;
     }
 
@@ -402,13 +421,11 @@
   .title-board {
     display: block;
     @include ellipsis-1line(24px, 32px);
-    color: rgba(0, 0, 0, 1)
   }
 
   .text-board {
     margin: 8px 0;
     @include ellipsis(38px, 14px, 500, 20px, 2);
-    color: rgba(0, 0, 0, .8)
   }
 }
 
@@ -468,13 +485,11 @@
   .title-board {
     display: block;
     @include ellipsis-1line(24px, 32px);
-    color: rgba(0, 0, 0, 1)
   }
 
   .text-board {
     margin: 8px 0;
     @include ellipsis(38px, 14px, 500, 20px, 2);
-    color: rgba(0, 0, 0, .8)
   }
 }
 
@@ -569,7 +584,7 @@
 /* media query - board-paging-tfc */
 @include pc {
   .board-paging-tfc {
-    padding: 96px 0 64px 0;
+    padding: 72px 0 64px 0;
     justify-content: center;
 
     .link-arr {
