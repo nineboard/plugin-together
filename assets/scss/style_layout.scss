@@ -99,10 +99,15 @@ html, body {
   }
 
   .link-logo {
-    display: block;
+    display: inline-block;
+    width: 260px;
+    height: 48px;
     font-size: 22px;
     text-decoration: none;
     color: #000;
+    background-size: cover;
+    background-position: 50% 50%;
+    @include ellipsis-1line(24px, 50px);
   }
 
   .greet {
@@ -252,6 +257,9 @@ html, body {
     font-size: 18px;
     font-weight: 600;
     color: rgba(0, 0, 0, 1);
+    background-size: cover;
+    background-position: 50% 50%;
+    @include ellipsis-1line(24px, 50px);
   }
 
   .list-lnb li:first-child .link-lnb, .list-lnb-depth li:first-child .link-lnb-depth {
@@ -268,6 +276,9 @@ html, body {
     font-size: 14px;
     font-weight: 400;
     color: rgba(0, 0, 0, 1);
+    background-size: cover;
+    background-position: 50% 50%;
+    @include ellipsis-1line(24px, 50px);
   }
 
   .list-lnb-depth {
@@ -280,6 +291,9 @@ html, body {
     font-size: 14px;
     font-weight: 400;
     color: rgba(0, 0, 0, .7);
+    background-size: cover;
+    background-position: 50% 50%;
+    @include ellipsis-1line(24px, 50px);
   }
 
   .list-tool {
