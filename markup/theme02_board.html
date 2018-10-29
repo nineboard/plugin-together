@@ -110,10 +110,9 @@
 
                         <!-- board-notice-tfc -->
                         <div class="board-notice-tfc">
-
+                            <!-- slide_zone -->
                             <h2 class="title-notice">카테고리명 나오는 곳 카테고리명이 최대 2줄까지도 나올 수가 있으려나 모르겠네 일단 두줄까지 나오도록</h2>
 
-                            <!-- slide_zone -->
                             <div class="area-slide">
                                 <div class="item-slide-area">
                                     <div class=" item-slide slick-slide">
@@ -131,25 +130,32 @@
                                                         </label>
                                                     </div>
                                                     <!--
-                                                        @NOTE 아래 항목은 사용자가 설정으로 빠질 수 있으며, 순서가 변경될 수 있습니다.
-                                                        작성자 이름
-                                                        작성일
-                                                        조회수
-                                                        댓글 수
-                                                        + 추천 수
-                                                        + 비추천 수
-                                                        + 수정일
+                                                        @FIXME 아래 항목은 사용자가 설정으로 빠질 수 있으며, 순서가 변경될 수 있습니다.
+                                                            - 작성자 이름
+                                                            - 작성일
+                                                            - 조회수
+                                                            - 댓글 수
+                                                            - 추천 수
+                                                            - 비추천 수
+                                                            - 수정일
+                                                            - 기타 사용자 추가 항목(1이상이 될 수 있음)
+                                                        - 각 요소의 태그는 변경 가능합니다.
+                                                        - class 이름만 맞게 들어가면 됩니다.
+                                                        - "column-"으로 시작하고 뒤에 오는 것은 각 항목의 고유이름입니다.
+                                                        - "공통-class"는 필요 없으면 제거하거나 적당한 것으로 변경해주세요.
+                                                        - "column-field-name"은 사용자가 추가한 확장 데이터(field-name)의 예시입니다.
+                                                        - 이는 글 보기(view) 페이지에도 동일하게 적용됩니다(글 상단에 제목, 작성자, 날짜 등 표시 부분)
                                                     -->
+                                                    <span class="공통-class column-favorite"></span><a href="#"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span></a></span>
                                                     <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) -->
-                                                    <a href="#" class="@if($item->favorite !== null) on @endif __xe-bd-favorite"  title="{{xe_trans('board::favorite')}}"><i class="xi-star"></i><span class="xe-sr-only">{{xe_trans('board::favorite')}}</span></a>
-
-                                                    <span class="author"><button type="button">작성자</button><!-- <a href="#link">작성자</a> --></span>
-                                                    <span class="date"><i class="xi-time"></i> 8시간전</span>
-                                                    <span class="count">조회 999,999</span>
-                                                    <span class="reply-count">댓글 0</span>
-                                                    <span class="...">추천 999</span>
-                                                    <span class="...">비추천 999</span>
-                                                    <span class="...">수정 2019-10-29</span>
+                                                    <span class="공통-class column-writer"><button type="button">작성자</button><!-- <a href="#link">작성자</a> --></span>
+                                                    <span class="공통-class column-created"><i class="xi-time"></i> 8시간전</span>
+                                                    <span class="공통-class column-read-count">조회 999,999</span>
+                                                    <span class="공통-class column-reply-count">댓글 0</span>
+                                                    <span class="공통-class column-assent-count"></span>추천 999</span>
+                                                    <span class="공통-class column-dissent-count"></span>비추천 999</span>
+                                                    <span class="공통-class column-updated"></span>수정 2019-10-29</span>
+                                                    <span class="공통-class column-field-name"></span>사용자 추가 항목</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -168,14 +174,16 @@
                                                             <span class="xe-label-text">선택</span>
                                                         </label>
                                                     </div>
-                                                    <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
-                                                    <span class="author"><button type="button">작성자</button></span>
-                                                    <span class="date"><i class="xi-time"></i> 8시간전</span>
-                                                    <span class="count">조회 999,999</span>
-                                                    <span class="reply-count">댓글 0 </span>
-                                                    <span class="...">추천 999</span>
-                                                    <span class="...">비추천 999</span>
-                                                    <span class="...">수정 2019-10-29</span>
+                                                    <span class="공통-class column-favorite"></span><a href="#"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span></a></span>
+                                                    <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) -->
+                                                    <span class="공통-class column-writer"><button type="button">작성자</button><!-- <a href="#link">작성자</a> --></span>
+                                                    <span class="공통-class column-created"><i class="xi-time"></i> 8시간전</span>
+                                                    <span class="공통-class column-read-count">조회 999,999</span>
+                                                    <span class="공통-class column-reply-count">댓글 0</span>
+                                                    <span class="공통-class column-assent-count"></span>추천 999</span>
+                                                    <span class="공통-class column-dissent-count"></span>비추천 999</span>
+                                                    <span class="공통-class column-updated"></span>수정 2019-10-29</span>
+                                                    <span class="공통-class column-field-name"></span>사용자 추가 항목</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -218,14 +226,16 @@
                                                     <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
-                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
-                                            <span class="author"><button type="button">작성자</button></span>
-                                            <span class="date"><i class="xi-time"></i> 8시간전</span>
-                                            <span class="count">조회 999,999</span>
-                                            <span class="reply-count">댓글 0 </span>
-                                            <span class="...">추천 999</span>
-                                            <span class="...">비추천 999</span>
-                                            <span class="...">수정 2019-10-29</span>
+                                            <span class="공통-class column-favorite"></span><a href="#"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span></a></span>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) -->
+                                            <span class="공통-class column-writer"><button type="button">작성자</button><!-- <a href="#link">작성자</a> --></span>
+                                            <span class="공통-class column-created"><i class="xi-time"></i> 8시간전</span>
+                                            <span class="공통-class column-read-count">조회 999,999</span>
+                                            <span class="공통-class column-reply-count">댓글 0</span>
+                                            <span class="공통-class column-assent-count"></span>추천 999</span>
+                                            <span class="공통-class column-dissent-count"></span>비추천 999</span>
+                                            <span class="공통-class column-updated"></span>수정 2019-10-29</span>
+                                            <span class="공통-class column-field-name"></span>사용자 추가 항목</span>
                                         </div>
                                     </div>
                                 </a>
@@ -372,11 +382,13 @@
 
                         <!-- board-paging-tfc -->
                         <div class="board-paging-tfc">
+                            <!-- @FIXME '이전', '다음' 항목은 현재 1페이지일 때 a 태그가 없을 수 있으므로, 대비가 필요합니다. -->
+                            <!-- 예시 --> <i class="xi-angle-left"><span class="blind">이전</span></i>
                             <a href="#" class="link-arr link-prev"><i class="xi-angle-left"><span class="blind">이전</span></i></a>
                             <div class="box-paging">
                                 <a href="#">1</a>
                                 <a href="#">2</a>
-                                <a href="#" class="active">3</a>
+                                <a href="#" class="active" title="현재 페이지">3</a>
                                 <a href="#">4</a>
                                 <a href="#">5</a>
                                 <a href="#">6</a>
@@ -386,6 +398,7 @@
                                 <a href="#">100</a>
                             </div>
                             <a href="#" class="link-arr link-next"><i class="xi-angle-right"><span class="blind">다음</span></i></a>
+                            <!-- 예시 --><i class="xi-angle-right"><span class="blind">다음</span></i>
                         </div>
                         <!-- // board-paging-tfc -->
 
