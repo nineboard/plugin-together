@@ -1,5 +1,5 @@
 window.jQuery(function ($) {
-  $('.item-slide-area').slick({
+  $('.board-notice-tfc .area-slide').slick({
     dots: true,
     prevArrow: null,
     nextArrow: null,
