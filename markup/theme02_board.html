@@ -116,7 +116,7 @@
                             <!-- slide_zone -->
                             <div class="area-slide">
                                 <div class="item-slide-area">
-                                    <div class="item-slide">
+                                    <div class=" item-slide slick-slide">
                                         <a href="#" class="link-slide">
                                             <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
                                             <div class="box-board">
@@ -127,12 +127,29 @@
                                                         <label class="xe-label">
                                                             <input type="checkbox">
                                                             <span class="xe-input-helper"></span>
-                                                            <span class="xe-label-text">작성자</span>
+                                                            <span class="xe-label-text">선택</span>
                                                         </label>
                                                     </div>
+                                                    <!--
+                                                        @NOTE 아래 항목은 사용자가 설정으로 빠질 수 있으며, 순서가 변경될 수 있습니다.
+                                                        작성자 이름
+                                                        작성일
+                                                        조회수
+                                                        댓글 수
+                                                        + 추천 수
+                                                        + 비추천 수
+                                                        + 수정일
+                                                    -->
+                                                    <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) -->
+                                                    <a href="#" class="@if($item->favorite !== null) on @endif __xe-bd-favorite"  title="{{xe_trans('board::favorite')}}"><i class="xi-star"></i><span class="xe-sr-only">{{xe_trans('board::favorite')}}</span></a>
+
+                                                    <span class="author"><button type="button">작성자</button><!-- <a href="#link">작성자</a> --></span>
                                                     <span class="date"><i class="xi-time"></i> 8시간전</span>
                                                     <span class="count">조회 999,999</span>
-                                                    <span class="reply-count">댓글 0 </span>
+                                                    <span class="reply-count">댓글 0</span>
+                                                    <span class="...">추천 999</span>
+                                                    <span class="...">비추천 999</span>
+                                                    <span class="...">수정 2019-10-29</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -148,12 +165,17 @@
                                                         <label class="xe-label">
                                                             <input type="checkbox">
                                                             <span class="xe-input-helper"></span>
-                                                            <span class="xe-label-text">작성자</span>
+                                                            <span class="xe-label-text">선택</span>
                                                         </label>
                                                     </div>
+                                                    <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                                    <span class="author"><button type="button">작성자</button></span>
                                                     <span class="date"><i class="xi-time"></i> 8시간전</span>
                                                     <span class="count">조회 999,999</span>
                                                     <span class="reply-count">댓글 0 </span>
+                                                    <span class="...">추천 999</span>
+                                                    <span class="...">비추천 999</span>
+                                                    <span class="...">수정 2019-10-29</span>
                                                 </div>
                                             </div>
                                         </a>
@@ -193,9 +215,37 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
+                                            <span class="date"><i class="xi-time"></i> 8시간전</span>
+                                            <span class="count">조회 999,999</span>
+                                            <span class="reply-count">댓글 0 </span>
+                                            <span class="...">추천 999</span>
+                                            <span class="...">비추천 999</span>
+                                            <span class="...">수정 2019-10-29</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="item-board">
+                                <a href="#" class="link-board">
+                                    <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
+                                    <div class="box-board">
+                                        <strong class="title-board">아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다</strong>
+                                        <p class="text-board">Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다</p>
+                                        <div class="box-meta">
+                                            <div class="select">
+                                                <label class="xe-label">
+                                                    <input type="checkbox">
+                                                    <span class="xe-input-helper"></span>
+                                                    <span class="xe-label-text">선택</span>
+                                                </label>
+                                            </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
@@ -214,9 +264,11 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
@@ -235,9 +287,11 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
@@ -256,9 +310,11 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
@@ -277,30 +333,11 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
-                                            <span class="date"><i class="xi-time"></i> 8시간전</span>
-                                            <span class="count">조회 999,999</span>
-                                            <span class="reply-count">댓글 0 </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="item-board">
-                                <a href="#" class="link-board">
-                                    <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
-                                    <div class="box-board">
-                                        <strong class="title-board">아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다</strong>
-                                        <p class="text-board">Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다</p>
-                                        <div class="box-meta">
-                                            <div class="select">
-                                                <label class="xe-label">
-                                                    <input type="checkbox">
-                                                    <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
-                                                </label>
-                                            </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
@@ -319,9 +356,11 @@
                                                 <label class="xe-label">
                                                     <input type="checkbox">
                                                     <span class="xe-input-helper"></span>
-                                                    <span class="xe-label-text">작성자</span>
+                                                    <span class="xe-label-text">선택</span>
                                                 </label>
                                             </div>
+                                            <!-- @FIXME 작성자 이름. button 또는 a 태그 선택 -->
+                                            <span class="author"><button type="button">작성자</button></span>
                                             <span class="date"><i class="xi-time"></i> 8시간전</span>
                                             <span class="count">조회 999,999</span>
                                             <span class="reply-count">댓글 0 </span>
