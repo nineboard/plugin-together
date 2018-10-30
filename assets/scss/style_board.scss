@@ -88,7 +88,13 @@
   }
 
   .box-meta {
+    display: flex;
+    flex-wrap: wrap;
     color: rgba(0, 0, 0, .4)
+  }
+
+  .item-meta {
+    margin-right: 12px;
   }
 
   .count, .reply-count {
@@ -169,9 +175,7 @@
       display: block;
     }
 
-
     .box-meta {
-      display: flex;
       font-size: 14px;
     }
 

@@ -99,15 +99,25 @@ html, body {
   }
 
   .link-logo {
-    display: inline-block;
-    width: 260px;
+    max-width: 260px;
     height: 48px;
     font-size: 22px;
     text-decoration: none;
     color: #000;
-    background-size: cover;
-    background-position: 50% 50%;
     @include ellipsis-1line(24px, 50px);
+  }
+
+  .link-logo + .text {
+    display: inline-block;
+  }
+
+  .link-logo + .image {
+    display: flex;
+    align-items: center;
+  }
+
+  .link-logo img {
+    max-height: 48px;
   }
 
   .greet {

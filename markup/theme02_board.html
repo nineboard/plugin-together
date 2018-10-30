@@ -105,10 +105,11 @@
                                 - 로고 영역 밖으로 나가 가려지면 안 됨
                             - 즉, 비율을 유지하여 영역(260 x 48) 내에 잘리지 않고 표시되어야 함
                      -->
-                    <a href="#" class="link-logo" style="background-image:url('http://placeimg.com/100/20')">Red Velvet 텍스트가 길경우는 말줄임표로 가는게 맞겠지유 </a>
-                    <!-- 예시 --><img src="http://placeimg.com/100/20" alt="대체 텍스트">
-                    <!-- 예시 --><img src="http://placeimg.com/80/80" alt="대체 텍스트">
-                    <!-- 예시 --><img src="http://placeimg.com/520/96" alt="대체 텍스트">
+                    <!-- 텍스트일때 -->
+                    <a href="#" class="link-logo text" >Red Velvet 텍스트가 길경우는 말줄임표로 가는게 맞겠지유 </a>
+
+                    <!-- 이미지일때 -->
+                    <a href="#" class="link-logo image"><img src="http://placeimg.com/520/96" alt="대체 텍스트"></a>
                     <span class="greet">Welcome to Red Velvet Official site! You can enjoy latest videos here on Red Velvet!</span>
                 </h1>
                 <button type="button" class="btn-login" title="로그인"><span class="icon_login"></span><span class="text_login">로그인</span></button>
@@ -134,12 +135,12 @@
                                         <div class="box-board">
                                             <strong class="title-board">아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다 아이돌룸 본방을 못보다니!! 최대 두줄까지 들어갑니다</strong>
                                             <p class="text-board">Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다 Red Velvet Summer Mini Album ‘Summer Magic’ 발매를 기념하는 앨범 사인회가 오는 8월 18일(토) 진행됩니다. 여기는 최대 3줄까지 들어갑니다</p>
-                                            <div class="box-meta">
+                                            <div class="box-meta reset-button">
                                                 <div class="select">
                                                     <label class="xe-label">
                                                         <input type="checkbox">
                                                         <span class="xe-input-helper"></span>
-                                                        <span class="xe-label-text">선택</span>
+                                                        <span class="xe-label-text"><span class="blind">선택</span></span>
                                                     </label>
                                                 </div>
                                                 <!--
@@ -154,21 +155,21 @@
                                                         - 기타 사용자 추가 항목(1이상이 될 수 있음)
                                                     - 각 요소의 태그는 변경 가능합니다.
                                                     - class 이름만 맞게 들어가면 됩니다.
-                                                    - "column-"으로 시작하고 뒤에 오는 것은 각 항목의 고유이름입니다.
-                                                    - "공통-class"는 필요 없으면 제거하거나 적당한 것으로 변경해주세요.
+
                                                     - "column-field-name"은 사용자가 추가한 확장 데이터(field-name)의 예시이며, 별도의 스타일 지정 불필요
                                                     - 이는 글 보기(view) 페이지에도 동일하게 적용됩니다(글 상단에 제목, 작성자, 날짜 등 표시 부분)
+                                                     @FIXME 작성자 이름. button 태그는 커스텀 가능 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) 
                                                 -->
-                                                <span class="공통-class column-favorite"><button type="button"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span></button></span>
-                                                <!-- @FIXME 작성자 이름. button 태그는 커스텀 가능 (script로 별도의 사용자 정보 팝업 메시지 표시 됨) -->
-                                                <span class="공통-class column-writer"><button type="button">작성자</button></span>
-                                                <span class="공통-class column-created"><i class="xi-time"></i> 8시간전</span>
-                                                <span class="공통-class column-comment-count">조회 999,999</span>
-                                                <span class="공통-class column-reply-count">댓글 0</span>
-                                                <span class="공통-class column-assent-count">추천 999</span>
-                                                <span class="공통-class column-dissent-count">비추천 999</span>
-                                                <span class="공통-class column-updated">수정 2019-10-29</span>
-                                                <span class="공통-class column-field-name">사용자 추가 항목</span>
+
+                                                <span class="item-meta column-favorite"><button type="button"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span> 스크랩</button></span>
+                                                <span class="item-meta column-writer"><button type="button">작성자</button></span>
+                                                <span class="item-meta column-created"><i class="xi-time"></i> 8시간전</span>
+                                                <span class="item-meta column-comment-count">조회 999,999</span>
+                                                <span class="item-meta column-reply-count">댓글 0</span>
+                                                <span class="item-meta column-assent-count">추천 999</span>
+                                                <span class="item-meta column-dissent-count">비추천 999</span>
+                                                <span class="item-meta column-updated">수정 2019-10-29</span>
+                                                <span class="item-meta column-field-name">사용자 추가 항목</span>
                                             </div>
                                         </div>
                                     </a>
