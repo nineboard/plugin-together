@@ -5,7 +5,7 @@
                 <strong class="title-dday">{{ $item->title }}</strong>
                 <div class="box-dday">
                     <span class="text-dday">{!!  nl2br($item->content) !!}</span>
-                    <span class="num-dday">D - {{ $item->etc['dday_at'] }}</span>
+                    <span class="num-dday">{{ $item->etc['diff'] }}</span>
                 </div>
             </div>
         </a>
