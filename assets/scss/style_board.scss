@@ -120,6 +120,11 @@
     content: '';
   }
 
+  .select {
+    display: inline-block;
+    margin: 1px 0 0 0;
+  }
+
   .xi-star-o {
     color: #f5a623;
   }
@@ -136,15 +141,20 @@
 
   .xe-label {
     width: 20px;
+    margin: 0;
     line-height: 18px;
   }
 
-  .select {
-    display: none;
+  .xe-label>input[type="checkbox"]+.xe-input-helper {
+    width: 16px;
+    height: 16px;
   }
 
-  .reply-count {
-    display: none;
+  .xe-label>input[type="checkbox"]+.xe-input-helper:after {
+    width: 6px;
+    height: 9px;
+    margin-top: -6px;
+    margin-left: -3px;
   }
 }
 
@@ -159,7 +169,7 @@
     .btn-align {
       width: auto;
       padding: 0 16px;
-      border: 1px solid rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, .2);
       font-size: 14px;
 
       .icon_sort {
@@ -167,11 +177,10 @@
       }
 
       &:hover {
-        border: 1px solid rgba(0, 0, 0, 0.8);
-        color: rgba(0, 0, 0, 0.8);
+        border: 1px solid rgba(0, 0, 0, .8);
+        color: rgba(0, 0, 0, .8);
       }
     }
-
 
     .link-board:hover, .link-slide:hover {
       .thumbnail {
@@ -201,31 +210,6 @@
 
     .item-meta:before {
       top: 1px;
-    }
-
-    .select {
-      display: inline-block;
-      margin: 1px 0 0 0;
-    }
-
-    .xe-label {
-      margin: 0;
-    }
-
-    .xe-label>input[type="checkbox"]+.xe-input-helper {
-      width: 16px;
-      height: 16px;
-    }
-
-    .xe-label>input[type="checkbox"]+.xe-input-helper:after {
-      width: 6px;
-      height: 9px;
-      margin-top: -6px;
-      margin-left: -3px;
-    }
-
-    .reply-count {
-      display: block;
     }
   }
 }
@@ -602,7 +586,7 @@
   .link-arr {
     width: 32px;
     height: 32px;
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, .2);
     line-height: 33px;
     text-align: center;
   }
@@ -699,3 +683,44 @@
     }
   }
 }
+
+
+
+/* board-view-tfc */
+.board-view-tfc {
+  max-width: 1232px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 16px;
+
+
+  .board-header {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    text-align: center;
+  }
+
+  .title-view {
+    margin: 32px 0 16px 0;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .board-editor {
+    margin-bottom: 32px;
+  }
+
+  .link-tag {
+    display: inline-block;
+    max-width: 100%;
+    height: 40px;
+    margin: 0 8px 8px 0;
+    padding: 0 10px;
+    border: 1px solid rgba(0, 0, 0, .2);
+    color: rgba(0, 0, 0, .5);
+    text-decoration: none;
+    @include ellipsis-1line(15px, 40px);
+  }
+}
+
