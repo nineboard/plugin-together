@@ -63,10 +63,6 @@
     overflow: hidden;
   }
 
-  .box-board {
-    position: relative;
-  }
-
   .thumbnail {
     position: relative;
     display: block;
@@ -87,14 +83,45 @@
     color: rgba(0, 0, 0, .8)
   }
 
+  .item-slide {
+    position: relative;
+  }
+
   .box-meta {
-    display: flex;
-    flex-wrap: wrap;
-    color: rgba(0, 0, 0, .4)
+    color: rgba(0, 0, 0, .4);
+
+    button {
+      outline: none;
+    }
+
+    button:hover {
+      color: rgba(0, 0, 0, .4);
+    }
+
   }
 
   .item-meta {
-    margin-right: 12px;
+    position: relative;
+    display: inline-block;
+    margin-right: 4px;
+    padding-right: 4px;
+    line-height: 22px;
+  }
+
+  .item-meta:before {
+    content: '·';
+    position: absolute;
+    top: 1px;
+    bottom: 0;
+    right: -4px;
+  }
+
+  .item-meta:last-child:before {
+    content: '';
+  }
+
+  .xi-star-o {
+    color: #f5a623;
   }
 
   .count, .reply-count {
@@ -103,25 +130,13 @@
     padding-left: 10px;
   }
 
-  .count:before, .reply-count:before {
-    content: '·';
-    position: absolute;
-    top: -1px;
-    bottom: 0;
-    left: 2px;
-    right:0;
-  }
-
   .date .xi-time {
     font-size: 12px;
   }
 
   .xe-label {
+    width: 20px;
     line-height: 18px;
-  }
-
-  .text-board {
-    display: none;
   }
 
   .select {
@@ -179,27 +194,18 @@
       font-size: 14px;
     }
 
-    .select {
-      margin: 3px 8px 0 0;
-    }
-
-    .date {
-      position: relative;
+    .item-meta {
       margin-right: 8px;
-      padding-left: 10px;
+      padding-right: 8px;
     }
 
-    .date:before {
-      content: '·';
-      position: absolute;
+    .item-meta:before {
       top: 1px;
-      bottom: 0;
-      left: 0;
-      right:0;
     }
 
     .select {
-      display: block;
+      display: inline-block;
+      margin: 1px 0 0 0;
     }
 
     .xe-label {
@@ -216,11 +222,6 @@
       height: 9px;
       margin-top: -6px;
       margin-left: -3px;
-    }
-
-    .count:before, .reply-count:before {
-      top: 1px;
-      left: 0;
     }
 
     .reply-count {
@@ -249,6 +250,11 @@
     overflow: hidden;
   }
 
+  .box-meta {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .thumbnail {
     padding-top: 56.3%;
   }
@@ -260,12 +266,19 @@
   }
 
   .text-board {
-    display: block!important;
-    margin: 8px 0;
+    margin: 8px 0 16px 0;
     @include ellipsis(38px, 14px, 400, 20px, 2);
   }
 
   /* slick */
+  .area-paging {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
+  }
+
   .area-paging,
   .area-paging li {
     margin: 0;
@@ -289,6 +302,7 @@
     outline: 0;
     font-size: 0;
     line-height: 0;
+    cursor: pointer;
   }
 
   .area-paging .slick-active button {
@@ -317,6 +331,7 @@
     .box-board {
       position: relative;
       width: calc(50% - 64px);
+      height: 338px;
       padding-left: 64px;
       background: #fff;
       overflow: hidden;
@@ -336,6 +351,15 @@
       font-size: 16px;
       line-height: 24px;
       -webkit-line-clamp: 3;
+    }
+
+    .box-meta {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      right: 0;
+      bottom: -5px;
+      width: calc(50% - 64px);
     }
 
     .area-paging {
@@ -371,14 +395,25 @@
   }
 
   .box-board {
+    position: relative;
     padding-top: 16px;
     background: #fff;
+  }
+
+  .box-meta {
+    position: relative;
+    width: 100%;
+    margin-top: 16px;
   }
 
   .title-board {
     height: 36px;
     margin-bottom: 8px;
     @include ellipsis(38px, 14px, 600, 20px, 2);
+  }
+
+  .text-board {
+    display: none;
   }
 }
 
@@ -430,6 +465,10 @@
     overflow: hidden;
   }
 
+  .link-board {
+    display: initial;
+  }
+
   .title-board {
     display: block;
     @include ellipsis-1line(24px, 32px);
@@ -438,6 +477,11 @@
   .text-board {
     margin: 8px 0;
     @include ellipsis(38px, 14px, 500, 20px, 2);
+  }
+
+  .box-meta {
+    float: right;
+    width: calc(100% - 128px);
   }
 }
 
@@ -450,6 +494,7 @@
         border-bottom: none;
       }
     }
+
     .thumbnail {
       width: 310px;
       height: 175px;
@@ -474,6 +519,10 @@
       font-size: 16px;
       line-height: 24px;
       -webkit-line-clamp: 3;
+    }
+
+    .box-meta {
+      width: calc(100% - 374px);
     }
   }
 }
@@ -590,6 +639,10 @@
     left: 0px;
     width: 10px;
     height: 29px;
+  }
+
+  .link-nomore {
+    opacity: .2;
   }
 }
 

@@ -6,6 +6,61 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* common */
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* reset */
+.reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reset-button {
+  button {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+}
+
+/* blind */
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px
+}
+
+@include mobile {
+
+  .blind-mobile {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    width: 1px;
+    height: 1px
+  }
+}
+
 /* html */
 html, body {
   position: relative;
@@ -158,6 +213,14 @@ html, body {
 /* footer */
 .footer-tfc {
   margin: 0 16px;
+
+  a {
+    color: #4fa5ee;
+
+    &:hover {
+      color: rgba(0, 0, 0, .7);
+    }
+  }
 
   .inner-footer {
     max-width: 1232px;
