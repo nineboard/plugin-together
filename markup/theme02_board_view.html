@@ -111,7 +111,7 @@
                 <section class="board-view-tfc section-board-tfc">
 
                     <div class="board-header">
-                        <h2 class="title-view">&quot;2018 멜론뮤직어워드&quot; Melon Music Awards 2018, MMA </h2>
+                        <h2 class="title-view"><span class="category">카테고리가 길면어떻하지 그래도 본문인데 본문에서는 길어져도 다 보이는게 맞는거겠지</span> <span class="title">멜론뮤직어워드&quot; Melon Music Awards 2018, MMA</span></h2>
                         <div class="box-meta reset-button">
                             <div class="select">
                                 <label class="xe-label">
@@ -121,8 +121,8 @@
                                 </label>
                             </div>
                             <span class="item-meta column-lock"><button type="button"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></button></span>
-                                <span class="item-meta column-file"><button type="button"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></button></span>
-                                <span class="item-meta column-favorite"><button type="button"><i class="xi-star-o"></i> <span class="blind-mobile">스크랩</span></button></span>
+                            <span class="item-meta column-file"><button type="button"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></button></span>
+                            <span class="item-meta column-favorite"><button type="button"><i class="xi-star-o"></i> <span class="blind-mobile">스크랩</span></button></span>
                             <span class="item-meta column-writer"><button type="button">작성자</button></span>
                             <span class="item-meta column-created"><i class="xi-time"></i> 8시간전</span>
                             <span class="item-meta column-comment-count">조회 999,999</span>
@@ -137,80 +137,60 @@
                         </div>
                     </div>
 
+                    <!-- board-editor -->
                     <div class="board-editor">
                         에디터 영역
                     </div>
 
-                    <div class="board-tag">
-                        <a href="#" class="link-tag">#공지사항</a>
-                        <a href="#" class="link-tag">#레드벨벳</a>
-                        <a href="#" class="link-tag">#졸라긴태그도 있을수 있겠지 다 적어줘야하나 한줄표현이 안될텐데</a>
-                        <a href="#" class="link-tag">#공지사항</a>
-                    </div>
+                    <!-- board-footer -->
+                    <div class="board-footer">
+                        <div class="board-tag">
+                            <a href="#" class="link-tag">#공지사항</a>
+                            <a href="#" class="link-tag">#레드벨벳</a>
+                            <a href="#" class="link-tag">#졸라긴태그도 있을수 있겠지 다 적어줘야하나 한줄표현이 안될텐데</a>
+                            <a href="#" class="link-tag">#공지사항</a>
+                        </div>
 
-                    <div class="read_footer">
-                        <div class="bd_file_list">
-                            <!-- [D] 클릭시 클래스 on 적용 -->
-                            <a href="#" class="bd_btn_file"><i class="xi-paperclip"></i><span class="xe-sr-only">파일 첨부 리스트</span> <strong class="bd_file_num">4</strong></a>
-                            <ul>
-                            <li><a href="#"><i class="xi-download"></i> 아이유 사진.jpg</a> <span class="bd_file_size">(5Mb)</span></li>
-                            <li><a href="#"><i class="xi-download"></i> 아이유 사진.jpg</a> <span class="bd_file_size">(5Mb)</span></li>
-                            <li><a href="#"><i class="xi-download"></i> 아이유 사진.jpg</a> <span class="bd_file_size">(5Mb)</span></li>
+                        <div class="board-file reset-button">
+                            <div class="box-file">
+                                <button type="button" class="btn-file"><i class="xi-paperclip"></i> 첨부파일 4개</button>
+                            </div>
+                            <ul class="list-file reset-list" style="display: none;">
+                                <li class="item-file">
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                </li>
+                                <li class="item-file">
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                </li>
+                                <li class="item-file">
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                </li>
                             </ul>
                         </div>
-                        <div class="bd_function">
-                            <div class="bd_function_l">
-                                <!-- [D] 클릭시 클래스 on 적용 및 bd_like_more 영역 diplay:block -->
-                                <a href="#" class="bd_ico bd_like"><i class="xi-heart"></i><span class="xe-sr-only">좋아요</span></a> <a href="#" class="bd_like_num">54</a>
-                                <a href="#" class="bd_ico bd_favorite"><i class="xi-star"></i><span class="xe-sr-only">즐겨찾기</span></a>
-                                <div class="bd_share_area">
-                                    <!-- [D] 클릭시 클래스 on 적용 -->
-                                    <a href="#" class="bd_ico bd_share"><i class="xi-external-link"></i><span class="xe-sr-only">공유</span></a>
-                                    <div class="ly_popup">
-                                        <ul>
-                                        <li><a href="#"><i class="xi-facebook"></i> 페이스북</a></li>
-                                        <li><a href="#"><i class="xi-twitter"></i> 트위터</a></li>
-                                        <li><a href="#"><i class="xi-link"></i> 고유주소</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+
+                        <div class="board-function reset-button">
+                            <div class="function-left">
+                                <!-- 선택된 상태에는 acive -->
+                                <button type="button" class="btn-like active"><i class="xi-heart-o"></i><span class="blind">좋아요</span></button>
+                                <button type="button" class="btn-scrap"><i class="xi-star-o"></i><span class="blind">스크랩</span></button>
+                                <button type="button" class="btn-share"><i class="xi-external-link"></i><span class="blind">공유</span></button>
                             </div>
-                            <div class="bd_function_r">
-                                <a href="#" class="bd_ico bd_list"><i class="xi-list"></i><span class="xe-sr-only">목록 보기</span></a>
-                                <a href="#" class="bd_ico bd_modify"><i class="xi-eraser"></i><span class="xe-sr-only">수정</span></a>
-                                <a href="#" class="bd_ico bd_delete"><i class="xi-trash"></i><span class="xe-sr-only">삭제</span></a>
-                                <div class="bd_more_area">
-                                    <!-- [D] 클릭시 클래스 on 적용 -->
-                                    <a href="#" class="bd_ico bd_more_view"><i class="xi-ellipsis-h"></i><span class="xe-sr-only">더보기</span></a>
-                                    <div class="ly_popup">
-                                        <ul>
-                                        <li><a href="#">신고</a></li>
-                                        <li><a href="#">스패머관리</a></li>
-                                        <li><a href="#">휴지통</a></li>
-                                        <li><a href="#">등등</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                            <div class="function-right">
+                                <a href="#" class="link-list"><i class="xi-list"></i><span class="blind">목록 보기</span></a>
+                                <button type="button" class="btn-add"><i class="xi-ellipsis-v"></i><span class="blind">더보기</span></button>
                             </div>
-                            <div class="bd_like_more">
-                                <ul>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <!-- [D] 해당글이 본인일 경우 클래스 on 적용 -->
-                                <li class="on"><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                <li><img src="sample/@iu.jpg" alt="아이유" title="아이유"></li>
-                                </ul>
-                                <!-- [D] 최대 10명까지 노출하고 나머지 사용자는 modal에서 처리 -->
-                                <!-- <p class="bd_like_more_text">님 외 <a href="#" data-toggle="xe-modal" data-target="#Modal2">56명</a>이 이 글을 좋아합니다.</p> -->
+                            <div class="area-like">
+                                <a href="#" class="link-profile">
+                                    <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
+                                    <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
+                                    <span class="thumbnail" style="background-image:url('../assets/images/temp_img.jpg')"></span>
+                                    좋아요 9,999명
+                                </a>
                             </div>
                         </div>
                     </div>
+
+
                 </section>
 
             </main>
