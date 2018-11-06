@@ -21,11 +21,15 @@
 <!-- // board-header-tfc -->
 
 <!-- 타입별 class - type-gallery-tfc / type-thumbnail-tfc / type-text-tfc -->
-<ul class="type-gallery-tfc list-board-tfc reset-list">
+@php
+    $listType = ($skinConfig['listType']) ? $skinConfig['listType'] : 'text';
+@endphp
+
+<ul class="type-{{ $listType }}-tfc list-board-tfc reset-list">
     @foreach($paginate as $item)
         <li class="item-board">
             <a href="{{$urlHandler->getShow($item, Request::all())}}" class="link-board">
-                <span class="thumbnail" style="background-image:url('{{ $item->board_thumbnail_path }}')"></span>
+                <span class="thumbnail" @if($item->board_thumbnail_path && $item->display !== $item::DISPLAY_SECRET) style="background-image:url('{{ $item->board_thumbnail_path }}')" @endif></span>
                 <div class="box-board">
                     <strong class="title-board">{!! $item->title !!}</strong>
                     <p class="text-board">{!! mb_substr($item->pure_content, 0, 100) !!}</p>
@@ -34,17 +38,21 @@
 
             <div class="box-meta reset-button">
                 @if ($isManager === true)
-                    <span>
+                    <div class="select">
                         <label class="xe-label">
                             <input type="checkbox" title="{{xe_trans('xe::select')}}" class="bd_manage_check" value="{{ $item->id }}">
                             <span class="xe-input-helper"></span>
                             <span class="xe-label-text xe-sr-only">{{xe_trans('xe::select')}}</span>
                         </label>
-                    </span>
+                    </div>
                 @endif
 
-                <span class="item-meta column-lock"><button type="button"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></button></span>
-                <span class="item-meta column-file"><button type="button"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></button></span>
+                @if ($item->display == $item::DISPLAY_SECRET)
+                    <span class="item-meta column-lock"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></span>
+                @endif
+                @if(count($item->files) > 0)
+                    <span class="item-meta column-file"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></span>
+                @endif
 
                 {{-- 게시판 출력 순서 항목 --}}
                 @foreach ($skinConfig['listColumns'] as $columnName)
@@ -60,15 +68,15 @@
                             <button type="button"
                                 data-toggle="xe-page-toggle-menu"
                                 data-url="{{ route('toggleMenuPage') }}"
-                                data-data='{!! json_encode(['id'=>$item->getUserId(), 'type'=>'user']) !!}'>{!! $item->writer !!}</button>
+                                data-data="{!! json_encode(['id'=>$item->getUserId(), 'type'=>'user']) !!}">{!! $item->writer !!}</button>
                             @else
-                                <button type="button" class="{{ $columnClassName }}">{!! $item->writer !!}</button>
+                                {!! $item->writer !!}
                             @endif
                         </span>
                     @elseif ($columnName == 'favorite')
                         {{-- 즐겨찾기 --}}
                         @if(Auth::check() === true)
-                            <span class="{{ $columnClassName }}"><button type="button" data-url="{{$urlHandler->get('favorite', ['id' => $item->id])}}" @if($item->favorite !== null) on @endif __xe-bd-favorite" title="{{xe_trans('board::favorite')}}"><i class="xi-star-o"></i> <span class="blind-mobile">{{ xe_trans('board::favorite') }}</span></button></span>
+                            <span class="{{ $columnClassName }}"><button type="button" data-url="{{$urlHandler->get('favorite', ['id' => $item->id])}}" class="@if($item->favorite !== null) active @endif __xe-bd-favorite" title="{{xe_trans('board::favorite')}}"><i class="xi-star-o"></i> <span class="blind-mobile">{{ xe_trans('board::favorite') }}</span></button></span>
                             {{-- <span class="{{ $columnClassName }}">
                                 <button type="button" data-url="{{$urlHandler->get('favorite', ['id' => $item->id])}}" @if($item->favorite !== null) on @endif __xe-bd-favorite" title="{{xe_trans('board::favorite')}}">
                                     <i class="xi-star"></i><span class="xe-sr-only">{{xe_trans('board::favorite')}}</span>
@@ -77,7 +85,7 @@
                         @endif
                     @elseif ($columnName == 'read_count')
                         {{-- 조회수 --}}
-                        <span class="{{ $columnClassName }}">조회 {{ $item->read_count }}</span>
+                        <span class="{{ $columnClassName }}">조회 {{ number_format($item->read_count) }}</span>
                     @elseif (in_array($columnName, ['created_at', 'updated_at', 'deleted_at']))
                         {{-- 작성일 등 날짜 --}}
                         <span class="{{ $columnClassName }}" title="{{ $item->{$columnName} }}" @if($item->{$columnName}->getTimestamp() > strtotime('-1 month')) data-xe-timeago="{{ $item->{$columnName} }}" @endif >{{ $item->{$columnName}->toDateString() }}</span>

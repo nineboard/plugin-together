@@ -1,17 +1,29 @@
 <?php
 // @see views/setting.blade.php
-//return [
-//    'setting' => [
-//        'sample_text' => [
-//            '_type' => 'text',
-//            '_section' => '기본설정',
-//            'label' => '샘플 문구',
-//            'placeholder' => '샘플용 설정 필드입니다.',
-//            'description' => '샘플용 설정 필드입니다.',
-//        ],
-//    ],
-//    'support' => [
-//        'mobile' => true,
-//        'desktop' => true
-//    ]
-//];
+return [
+   'setting' => [
+       [
+            'section' => [
+                'class' => 'header-section',
+                'title' => '헤더 설정'
+            ],
+           '_type' => 'select',
+           '_section' => '기본설정',
+           'fields' => [
+                'listType' => [
+                    '_type' => 'select',
+                    'label' => '목록 형태',
+                    'options' => [
+                        'text' => '일반 목록',
+                        'thumbnail' => 'Thumbnail 표시',
+                        'gallery' => 'Gallery',
+                    ]
+                ],
+           ]
+       ],
+   ],
+   'support' => [
+       'mobile' => true,
+       'desktop' => true
+   ]
+];
