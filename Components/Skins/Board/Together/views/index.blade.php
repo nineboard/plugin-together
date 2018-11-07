@@ -6,17 +6,105 @@
 <!-- board-header-tfc -->
 <div class="board-header-tfc">
     <div class="box-manage reset-button">
-        <!-- @TODO 게시글 관리 -->
-        <button type="button" class="btn-manage">%게시글 관리</button>
-        <button type="button" class="btn-align __xe-bd-mobile-sorting"><span class="icon_sort"></span><span class="text-align">{{xe_trans('xe::order')}} <span class="xi-caret-down-min"></span></span></button>
+        <div class="xe-form-inline xe-hidden-xs board-sorting-area __xe-forms">
+            {{-- 게시글 관리 --}}
+            <button type="button" class="xe-btn xe-btn-primary-outline bd_manage __xe-bd-manage btn-manage">{{ xe_trans('xe::manage') }}</button>
+
+            {{-- 카테고리 --}}
+            @if($config->get('category') == true)
+            {!! uio('uiobject/board@select', [
+                'name' => 'category_item_id',
+                'label' => xe_trans('xe::category'),
+                'value' => Request::get('category_item_id'),
+                'items' => $categories,
+            ]) !!}
+            @endif
+
+            {{-- 정렬 --}}
+            {!! uio('uiobject/board@select', [
+                'name' => 'order_type',
+                'label' => xe_trans('xe::order'),
+                'value' => Request::get('order_type'),
+                'items' => $handler->getOrders(),
+            ]) !!}
+        </div>
     </div>
 
     <div class="box-tool">
         <!-- @TODO 검색 -->
-        <a href="#" class="link-search"><span class="xe-sr-only">%검색</span><i class="xi-search"></i></a>
+        <a href="#" class="link-search bd_search __xe-bd-search"><span class="xe-sr-only">{{ xe_trans('xe::search') }}</span><i class="xi-search"></i></a>
         <a href="{{ $urlHandler->get('create') }}" class="link-write"><span class="xe-sr-only">{{ xe_trans('board::newPost') }}</span><i class="xi-pen-o"></i></a>
         <a href="{{ $urlHandler->managerUrl('config', ['boardId'=>$instanceId]) }}" class="link-set"><span class="xe-sr-only">{{ xe_trans('xe::manage') }}</span><i class="xi-cog"></i></a>
     </div>
+
+    <!-- 게시글 관리 -->
+    @if ($isManager === true)
+    <div class="bd_manage_detail">
+        <div class="xe-row">
+            <div class="xe-col-sm-6">
+                <div class="xe-row __xe_copy">
+                    <div class="xe-col-sm-3">
+                        <label class="xe-control-label">{{ xe_trans('xe::copy') }}</label>
+                    </div>
+                    <div class="xe-col-sm-9">
+                        <div class="xe-form-inline">
+                            {!! uio('uiobject/board@select', [
+                                'name' => 'copyTo',
+                                'label' => xe_trans('xe::select'),
+                                'items' => $boardList,
+                            ]) !!}
+                            <button type="button" class="xe-btn xe-btn-primary-outline __xe_btn_submit" data-url="{{ $urlHandler->managerUrl('copy') }}">{{ xe_trans('xe::copy') }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xe-row">
+            <div class="xe-col-sm-6">
+                <div class="xe-row __xe_move">
+                    <div class="xe-col-sm-3">
+                        <label class="xe-control-label">{{ xe_trans('xe::move') }}</label>
+                    </div>
+                    <div class="xe-col-sm-9">
+                        <div class="xe-form-inline">
+                            {!! uio('uiobject/board@select', [
+                                'name' => 'moveTo',
+                                'label' => xe_trans('xe::select'),
+                                'items' => $boardList,
+                            ]) !!}
+                            <button type="button" class="xe-btn xe-btn-primary-outline __xe_btn_submit" data-url="{{ $urlHandler->managerUrl('move') }}">{{ xe_trans('xe::move') }}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xe-row">
+            <div class="xe-col-sm-6">
+                <div class="xe-row __xe_to_trash">
+                    <div class="xe-col-sm-3">
+                        <label class="xe-control-label">{{ xe_trans('xe::trash') }}</label>
+                    </div>
+                    <div class="xe-col-sm-9">
+                        <a href="#" data-url="{{ $urlHandler->managerUrl('trash') }}" class="xe-btn-link __xe_btn_submit">{{ xe_trans('board::postsMoveToTrash') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="xe-row">
+            <div class="xe-col-sm-6">
+                <div class="xe-row __xe_delete">
+                    <div class="xe-col-sm-3">
+                        <label class="xe-control-label">{{ xe_trans('xe::delete') }}</label>
+                    </div>
+                    <div class="xe-col-sm-9">
+                        <a href="#" data-url="{{ $urlHandler->managerUrl('destroy') }}" class="xe-btn-link __xe_btn_submit">{{ xe_trans('board::postsDelete') }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
+    <!-- /게시글 관리 -->
 </div>
 <!-- // board-header-tfc -->
 
@@ -68,7 +156,7 @@
                             <button type="button"
                                 data-toggle="xe-page-toggle-menu"
                                 data-url="{{ route('toggleMenuPage') }}"
-                                data-data="{!! json_encode(['id'=>$item->getUserId(), 'type'=>'user']) !!}">{!! $item->writer !!}</button>
+                                data-data='{!! json_encode(['id'=>$item->getUserId(), 'type'=>'user']) !!}'>{!! $item->writer !!}</button>
                             @else
                                 {!! $item->writer !!}
                             @endif
