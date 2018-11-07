@@ -18,6 +18,7 @@
     position: relative;
     display: block;
     padding-top: 58.5%;
+    transition: transform 0.2s;
     @extend %thumbnail-background;
 
   }
@@ -126,6 +127,7 @@
   .thumbnail {
     display: block;
     padding-top: 100%;
+    transition: transform 0.2s;
     @extend %thumbnail-background;
   }
 
@@ -164,6 +166,7 @@
 
     .thumbnail {
       position: relative;
+      transition: transform 0.2s;
       @include thumbnail-dimmed;
     }
 
@@ -339,6 +342,7 @@
       width: 60px;
       height: 60px;
       margin-top: 1px;
+      transition: transform 0.2s;
     }
 
     .box-latest {
@@ -493,6 +497,7 @@
   .thumbnail {
     display: block;
     padding-top: 100%;
+    transition: transform 0.2s;
     @extend %thumbnail-background;
   }
 
