@@ -2,6 +2,23 @@
 /* global $ */
 
 $(function () {
+  var $wrapMain = $('.wrap-main')
+  var $headerTfc = $('.header-tfc', $wrapMain)
+
+  if ($wrapMain.length) {
+    var onScroll = false
+    window.addEventListener('scroll', function (e) {
+      var scrollTop = $(document).scrollTop()
+      if (!onScroll && scrollTop > 10) {
+        onScroll = true
+        $headerTfc.addClass('header-main-tfc')
+      } else if (onScroll && scrollTop <= 10) {
+        onScroll = false
+        $headerTfc.removeClass('header-main-tfc')
+      }
+    })
+  }
+
   /* 메뉴 토글 */
   function menuToggle () {
     $('#wrap').toggleClass('menu-open')
