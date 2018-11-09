@@ -10,7 +10,7 @@ var config = {
 gulp.task('default', ['sass'])
 
 gulp.task('sass', function () {
-  return gulp.src(['./assets/scss/*.scss', '!_*.scss'])
+  return gulp.src(['./assets/scss/*.scss'])
     .pipe($.if(config.useSourceMaps, $.sourcemaps.init()))
     .pipe($.plumber())
     .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))
@@ -25,5 +25,5 @@ gulp.task('sass', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch('./assets/scss/*.scss', ['sass'])
+  gulp.watch('./assets/scss/**/*.scss', ['sass'])
 })
