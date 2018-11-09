@@ -11,16 +11,16 @@
 
                         {{-- 2nd menu --}}
                         @if(count($menu1st['children']))
-                            <ul class="list-lnb reset-list">
+                            <ul class="list-gnb reset-list">
                                 @foreach($menu1st['children'] as $menu2nd)
                                     <li>
-                                        <a  href="{{ url($menu2nd['url']) }}" @if($menu2nd['target'] !== '_self') target="{{ $menu2nd['target'] }}" @endif class="link-lnb">{{ $menu2nd['link'] }}</a>
+                                        <a  href="{{ url($menu2nd['url']) }}" @if($menu2nd['target'] !== '_self') target="{{ $menu2nd['target'] }}" @endif class="link-gnb">{{ $menu2nd['link'] }}</a>
 
                                         {{-- 3rd menu --}}
                                         @if(count($menu2nd['children']))
-                                            <ul class="list-lnb-depth reset-list">
+                                            <ul class="list-gnb-depth reset-list">
                                                 @foreach($menu2nd['children'] as $menu3rd)
-                                                    <li><a href="{{ url($menu3rd['url']) }}" @if($menu3rd['target'] !== '_self') target="{{ $menu3rd['target'] }}" @endif class="link-lnb-depth">{{ $menu3rd['link'] }}</a></li>
+                                                    <li><a href="{{ url($menu3rd['url']) }}" @if($menu3rd['target'] !== '_self') target="{{ $menu3rd['target'] }}" @endif class="link-gnb-depth">{{ $menu3rd['link'] }}</a></li>
                                                 @endforeach
                                             </ul>
                                         @endif
