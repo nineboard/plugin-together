@@ -39,7 +39,7 @@
   .thumbnail {
     display: block;
     padding-top: 100%;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-in-out;
     @extend %thumbnail-background;
   }
 

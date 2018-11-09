@@ -5,7 +5,7 @@
 
 .wrap-main {
   .header-main-tfc {
-    transition: box-shadow 1s;
+    transition: box-shadow 0.7s;
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
   }
   .main-tfc {
@@ -40,6 +40,7 @@
   width: 100%;
   padding-top: 56px;
   left: 0;
+  transition: left 0.3s ease-in-out;
 
   &:after {
     content: '';
