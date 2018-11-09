@@ -11,7 +11,8 @@
 
 {{-- stylesheet --}}
 {{ app('xe.frontend')->css([
-    $_theme::asset('../../../assets/css/style.css'),
+    $_theme::asset('../../../assets/css/theme.css'),
+    $_theme::asset('../../../assets/css/widget.css'),
     $_theme::asset('../../../assets/css/style_icon.css'),
     $_theme::asset('../../../assets/libs/slick/slick.css')
 ])->load() }}

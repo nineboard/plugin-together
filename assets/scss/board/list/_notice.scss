@@ -1,0 +1,142 @@
+/* board-notice-tfc */
+.board-notice-tfc {
+  margin-bottom: 64px;
+
+  .title-notice {
+    margin: 32px 0;
+    @include ellipsis(76px, 28px, 600, 36px, 2);
+  }
+
+  .area-slide {
+    position: relative;
+  }
+
+  .link-slide {
+    display: block;
+    overflow: hidden;
+  }
+
+  .box-meta {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .thumbnail {
+    padding-top: 56.3%;
+  }
+
+  .title-board {
+    height: 64px;
+    margin: 16px 0 8px 0;
+    @include ellipsis(64px, 24px, 600, 32px, 2);
+  }
+
+  .text-board {
+    margin: 8px 0 16px 0;
+    @include ellipsis(38px, 14px, 400, 20px, 2);
+  }
+
+  /* slick */
+  .area-paging {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: auto;
+  }
+
+  .area-paging,
+  .area-paging li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .area-paging li {
+    display: inline-block;
+  }
+
+  .area-paging button {
+    overflow: hidden;
+    width: 10px;
+    height: 10px;
+    margin: 0 4px;
+    padding: 0;
+    border: 0 none;
+    border-radius: 10px;
+    color: transparent;
+    background: rgba(0, 0, 0, .2);
+    outline: 0;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+  }
+
+  .area-paging .slick-active button {
+    background: #4fa5ee;
+  }
+}
+/* // board-notice-tfc */
+
+/* media query - board-notice-tfc */
+@include pc {
+  .board-notice-tfc {
+
+    &:after {
+      content: '';
+      display: table;
+      clear: both;
+    }
+
+    .thumbnail {
+      float: left;
+      width: 50%;
+      height: 338px;
+      padding-top: 0;
+    }
+
+    .box-board {
+      position: relative;
+      width: calc(50% - 64px);
+      height: 338px;
+      padding-left: 64px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .title-board {
+      max-height: 84px;
+      height: auto;
+      margin: 74px 0 32px 0;
+      font-size: 34px;
+      line-height: 42px;
+    }
+
+    .text-board {
+      max-height: 70px;
+      margin-bottom: 56px;
+      font-size: 16px;
+      line-height: 24px;
+      -webkit-line-clamp: 3;
+    }
+
+    .box-meta {
+      position: absolute;
+      display: flex;
+      flex-wrap: wrap;
+      right: 0;
+      bottom: -5px;
+      width: calc(50% - 64px);
+    }
+
+    .area-paging {
+      position: absolute;
+      width: calc(50% - 64px);
+      top: 0;
+      left: auto;
+      right: 0;
+      bottom: auto;
+      z-index: 10;
+      text-align: left;
+    }
+  }
+}
