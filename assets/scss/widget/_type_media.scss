@@ -18,7 +18,7 @@
     position: relative;
     display: block;
     padding-top: 58.5%;
-    transition: transform 0.2s;
+    transition: transform 0.2s ease-in-out;
     @extend %thumbnail-background;
 
   }

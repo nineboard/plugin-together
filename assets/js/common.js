@@ -22,12 +22,6 @@ $(function () {
   /* 메뉴 토글 */
   function menuToggle () {
     $('#wrap').toggleClass('menu-open')
-    $('.btn-menu').toggleClass('btn-menu-off')
-
-    if ($('#wrap').has('menu_on')) {
-      $('#container').removeClass('search_on')
-      $('.area_search').hide()
-    }
   }
 
   $('body').bind('click', function (e) {
