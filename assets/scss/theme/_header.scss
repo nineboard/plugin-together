@@ -1,8 +1,6 @@
-
 /* header */
 .header-tfc {
   position: fixed;
-  overflow: hidden;
   top: 0;
   z-index: 2005;
   width: 100%;
@@ -33,12 +31,18 @@
     line-height: 59px;
   }
 
+  .user-menu-dropdown {
+    &:hover .user-menu {
+      display: block;
+    }
+  }
+
   .btn-login {
     width: auto;
     right: 0;
     padding-right: 20px;
     line-height: 57px;
-    color: rgba(0, 0, 0, .6)
+    color: rgba(0, 0, 0, .6);
   }
 
   .text_login {
@@ -47,6 +51,33 @@
     font-size: 14px;
     font-weight: 500;
     vertical-align: 5px;
+  }
+
+  .user-menu {
+    display: none;
+    position: absolute;
+    top: 56px;
+    right: 0;
+    margin: 0;
+    padding: 29px 32px;
+    max-width: 230px;
+    background-color: #f1f1f1;
+
+    li {
+      list-style: none;
+      font-size: 14px;
+      font-weight: bold;
+      padding: 6px 0;
+
+      a {
+        color: #000000;
+        text-decoration: none;
+        transition: color 0.05s ease-in-out;
+        &:hover {
+          color: #999;
+        }
+      }
+    }
   }
 
   .logo {
