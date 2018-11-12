@@ -18,7 +18,8 @@
     display: block;
   }
   .main-tfc {
-    padding-top: 398px;
+    position: relative;
+    top: 398px;
   }
 }
 
@@ -30,7 +31,7 @@
   }
   .wrap-main-header {
     .main-tfc {
-      padding-top: 566px;
+      top: 566px;
     }
   }
 }
