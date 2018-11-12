@@ -58,6 +58,12 @@
       width: calc(100% / 6);
       margin-bottom: 16px;
       padding: 0 12px;
+
+      .link-gallery {
+        display: inline-block;
+        width: 100%;
+        overflow: hidden;
+      }
     }
 
     .thumbnail {
