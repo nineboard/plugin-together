@@ -1,0 +1,80 @@
+
+/* section-dday-tfcw */
+.section-dday-tfcw {
+
+  .link-dday {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-top: 47.1%;
+    @extend %thumbnail-background;
+    color: #fff;
+    text-decoration: none;
+
+    &:before {
+      @include dimmed-gradient(top, 0.4, 0);
+    }
+  }
+
+  .inner-dday {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+    padding: 0 24px 0 16px;
+  }
+
+  .title-dday {
+    display: block;
+    width: 80%;
+    margin-bottom: 8px;
+    @include ellipsis-1line(24px, 32px);
+  }
+
+  .box-dday {
+    display: flex;
+    width: 100%;
+  }
+
+  .text-dday {
+    width: 60%;
+    @include ellipsis(36px, 14px, 500, 20px, 2);
+    vertical-align: bottom;
+  }
+
+  .num-dday {
+    width: 40%;
+    font-size: 34px;
+    line-height: 40px;
+    text-align: right;
+    letter-spacing: -1px;
+  }
+}
+
+/* media query - section-dday-tfcw */
+@include pc {
+  .section-dday-tfcw {
+    margin-bottom: 80px;
+
+    .inner-dday {
+      bottom: 48px;
+      padding: 0 48px;
+    }
+
+    .title-dday {
+      margin-bottom: 16px;
+      font-size: 32px;
+    }
+
+    .text-dday {
+      max-height: 44px;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .num-dday {
+      font-size: 50px;
+      font-weight: bold;
+      line-height: 47px;
+    }
+  }
+}

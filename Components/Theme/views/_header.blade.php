@@ -1,4 +1,4 @@
-<header class="header-tfc">
+<header class="header-tfc @if($layoutType === 'sub') header-sub-tfc @endif">
     <button type="button" class="btn-menu" title="메뉴"><span class="icon_menu"></span><span class="blind">메뉴</span></button>
     <h1 class="logo">
         {{-- 로고 --}}

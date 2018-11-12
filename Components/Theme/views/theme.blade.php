@@ -1,5 +1,9 @@
 @extends($theme::view('frame'))
 
+@php
+    $layoutType = ($config['layoutType']) ? $config['layoutType'] : 'sub';
+@endphp
+
 {{-- meta(viewport) --}}
 {{ app('xe.frontend')->meta()->name('viewport')->content(
     'width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'
@@ -7,7 +11,8 @@
 
 {{-- stylesheet --}}
 {{ app('xe.frontend')->css([
-    $_theme::asset('../../../assets/css/style.css'),
+    $_theme::asset('../../../assets/css/theme.css'),
+    $_theme::asset('../../../assets/css/widget.css'),
     $_theme::asset('../../../assets/css/style_icon.css'),
     $_theme::asset('../../../assets/libs/slick/slick.css')
 ])->load() }}

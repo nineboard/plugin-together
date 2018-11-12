@@ -5,6 +5,28 @@ return [
         /* 헤더 설정 */
         [
             'section' => [
+                'class' => 'common-section',
+                'title' => '일반 설정'
+            ],
+            'fields' => [
+                'layoutType' => [
+                    '_type' => 'select',
+                    'label' => '레이아웃 형태',
+                    'options' => [
+                        'sub' => '서브 페이지용',
+                        'main' => '메인 페이지용'
+                    ]
+                ],
+                'mainMenu' => [
+                    '_type' => 'menu',
+                    'label' => '메인 메뉴 (GNB. 3 depth)',
+                ],
+            ]
+        ],
+
+        /* 헤더 설정 */
+        [
+            'section' => [
                 'class' => 'header-section',
                 'title' => '헤더 설정'
             ],
@@ -32,10 +54,6 @@ return [
                     '_type' => 'langText',
                     'label' => 'slogan',
                     'description' => 'slogan',
-                ],
-                'mainMenu' => [
-                    '_type' => 'menu',
-                    'label' => '메인 메뉴 (GNB. 3 depth)',
                 ],
             ]
         ],

@@ -1,0 +1,119 @@
+
+/* header */
+.header-tfc {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 56px;
+  background-color: #FFF;
+
+  button {
+    position: absolute;
+    width: 56px;
+    height: 56px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 24px;
+    color: rgba(0, 0, 0, .4);
+    overflow: visible;
+    cursor: pointer;
+    outline: none;
+  }
+
+  button:hover {
+    color: rgba(0, 0, 0, 1);
+    transition: .2s;
+  }
+
+  .btn-menu {
+    left: 0;
+    line-height: 59px;
+  }
+
+  .btn-login {
+    width: auto;
+    right: 0;
+    padding-right: 20px;
+    line-height: 57px;
+    color: rgba(0, 0, 0, .6)
+  }
+
+  .text_login {
+    display: none;
+    padding-left: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    vertical-align: 5px;
+  }
+
+  .logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+
+    left: 56px;
+    height: 56px;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  .link-logo {
+    max-width: 200px;
+    height: 48px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+    @include ellipsis-1line(24px, 50px);
+  }
+
+  .link-logo + .text {
+    display: inline-block;
+  }
+
+  .link-logo + .image {
+    display: flex;
+    align-items: center;
+  }
+
+  .link-logo img {
+    max-height: 48px;
+  }
+
+  .greet {
+    display: none;
+  }
+}
+
+.header-sub-tfc {
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2)
+}
+
+@include pc-wide {
+  .header-tfc {
+
+    .greet {
+      display: inline-block;
+      margin-left: 24px;
+      padding-top: 3px;
+      font-size: 14px;
+      font-weight: 400;
+      color: rgba(0, 0, 0, .6);
+    }
+  }
+}
+
+@include pc {
+  .header-tfc {
+    .link-logo {
+      max-width: 260px;
+      font-size: 22px;
+    }
+
+    .text_login {
+      display: inline-block!important;
+    }
+  }
+}

@@ -10,7 +10,7 @@ var config = {
 gulp.task('default', ['sass'])
 
 gulp.task('sass', function () {
-  return gulp.src(['./assets/scss/style.scss', '!_*.scss'])
+  return gulp.src(['./assets/scss/*.scss', '!_*.scss'])
     .pipe($.if(config.useSourceMaps, $.sourcemaps.init()))
     .pipe($.plumber())
     .pipe($.sass({outputStyle: 'compressed'}).on('error', $.sass.logError))

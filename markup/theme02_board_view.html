@@ -19,12 +19,15 @@
     <meta name="description" content="PHP Open Source CMS" />
     <meta name="keywords" content="xpressengine,xe,cms,open-source" />
 
+    <!-- XE Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
     <link rel="stylesheet" href="../assets/css/xe_common.css" />
     <link rel="stylesheet" href="../assets/css/xe-ui-component.css" />
     <link rel="stylesheet" href="../assets/css/editor-style.css" />
+    <!-- XE Core -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
-    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/theme.css" />
+    <link rel="stylesheet" href="../assets/css/board.css" />
     <link rel="stylesheet" href="../assets/css/style_icon.css">
     <link rel="stylesheet" href="../assets/libs/slick/slick.css" />
 
@@ -111,7 +114,11 @@
                 <section class="board-view-tfc section-board-tfc">
 
                     <div class="board-header">
-                        <h2 class="title-view"><span class="category">카테고리가 길면어떻하지 그래도 본문인데 본문에서는 길어져도 다 보이는게 맞는거겠지</span> <span class="title">멜론뮤직어워드&quot; Melon Music Awards 2018, MMA</span></h2>
+                        <h2 class="title-view">
+                            <!-- @fixme 여기는 카테고리가 아니라 공지 표시입니다. -->
+                            <span class="category">공지</span>
+                            <span class="title">멜론뮤직어워드&quot; Melon Music Awards 2018, MMA</span>
+                        </h2>
                         <div class="box-meta reset-button">
                             <div class="select">
                                 <label class="xe-label">
@@ -120,8 +127,11 @@
                                     <span class="xe-label-text"><span class="blind">선택</span></span>
                                 </label>
                             </div>
-                            <span class="item-meta column-lock"><button type="button"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></button></span>
-                            <span class="item-meta column-file"><button type="button"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></button></span>
+                            <!-- @fixme button 태그 제거 -->
+                            <span class="item-meta column-lock"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></span>
+                            <span class="item-meta column-file"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></span>
+                            <!-- // @fixme button 태그 제거 -->
+                            <!-- @fixme favorite 'active' 상태가 적용되지 않음 -->
                             <span class="item-meta column-favorite"><button type="button"><i class="xi-star-o"></i> <span class="blind-mobile">스크랩</span></button></span>
                             <span class="item-meta column-writer"><button type="button">작성자</button></span>
                             <span class="item-meta column-created"><i class="xi-time"></i> 8시간전</span>
@@ -130,10 +140,6 @@
                             <span class="item-meta column-assent-count">추천 999</span>
                             <span class="item-meta column-dissent-count">비추천 999</span>
                             <span class="item-meta column-updated">수정 2019-10-29</span>
-                            <span class="item-meta column-field-name">사용자 추가 항목</span>
-                            <span class="item-meta column-field-name">사용자 추가 항목</span>
-                            <span class="item-meta column-field-name">사용자 추가 항목</span>
-                            <span class="item-meta column-field-name">사용자 추가 항목</span>
                         </div>
                     </div>
 
@@ -157,13 +163,13 @@
                             </div>
                             <ul class="list-file reset-list" style="display: none;">
                                 <li class="item-file">
-                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a>
                                 </li>
                                 <li class="item-file">
-                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a>
                                 </li>
                                 <li class="item-file">
-                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a> 
+                                    <a href="#" class="link-file"><i class="xi-download"></i> 아이유 사진.jpg <span class="size">(5Mb)</a>
                                 </li>
                             </ul>
                         </div>
@@ -172,11 +178,21 @@
                             <div class="function-left">
                                 <!-- 선택된 상태에는 acive -->
                                 <button type="button" class="btn-like active"><i class="xi-heart-o"></i><span class="blind">좋아요</span></button>
+                                <!-- @note 보여지거나 보여지지 않을 수 있음 -->
                                 <button type="button" class="btn-scrap"><i class="xi-star-o"></i><span class="blind">스크랩</span></button>
-                                <button type="button" class="btn-share"><i class="xi-external-link"></i><span class="blind">공유</span></button>
+                                <!-- // @note 보여지거나 보여지지 않을 수 있음 -->
+                                <!-- @FIXME 공유 버튼. 편집 불가 -->
+                                <a href="#" title="공유하기" class="bd_ico xe-share">
+                                    <i class="xi-external-link"></i><span class="xe-sr-only">공유</span>
+                                </a>
+                                <!-- // @FIXME 공유 버튼. 편집 불가 -->
                             </div>
                             <div class="function-right">
                                 <a href="#" class="link-list"><i class="xi-list"></i><span class="blind">목록 보기</span></a>
+                                <!-- @note 보여지거나 보여지지 않을 수 있음 -->
+                                <a href="#" class="???"><i class="xi-eraser"></i><span class="blind">수정</span></a>
+                                <a href="#" class="???"><i class="xi-trash"></i><span class="blind">삭제</span></a>
+                                <!-- // @note 보여지거나 보여지지 않을 수 있음 -->
                                 <button type="button" class="btn-add"><i class="xi-ellipsis-v"></i><span class="blind">더보기</span></button>
                             </div>
                             <div class="area-like">
@@ -190,7 +206,19 @@
                         </div>
                     </div>
 
-
+                    <!-- @fixme 댓글과 하단의 리스트 영역너비 지정이 필요합니다 -->
+                    <!-- 댓글 영역 -->
+                    <div class="board-footer">
+                        <!-- @note 이 안의 코드는 변경 불가 -->
+                        <div class="__xe_comment board_comment">
+                            <div class="comment_header">
+                                <p class="total_count"><span class="total_count_num __xe_comment_cnt">1</span>개 댓글</p>
+                            </div>
+                            여기에 댓글이 출력됨
+                        </div>
+                        <!-- // @note 이 안의 코드는 변경 불가 -->
+                    </div>
+                    <!-- // 댓글 -->
                 </section>
 
             </main>

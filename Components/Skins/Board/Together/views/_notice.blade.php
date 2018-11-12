@@ -13,7 +13,7 @@
         @foreach($notices as $item)
             <div class="item-slide">
                 <a href="{{$urlHandler->getShow($item, Request::all())}}" class="link-slide">
-                    <span class="thumbnail" @if($item->board_thumbnail_path) style="background-image:url('{{ $item->board_thumbnail_path }}')"@endif></span>
+                    <span class="thumbnail" @if($item->board_thumbnail_path && $item->display !== $item::DISPLAY_SECRET) style="background-image:url('{{ $item->board_thumbnail_path }}')"@endif></span>
                     <div class="box-board">
                         <strong class="title-board">
                             {{-- 글 제목 --}}
@@ -39,8 +39,12 @@
                         </span>
                     @endif
 
-                    <span class="item-meta column-lock"><button type="button"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></button></span>
-                    <span class="item-meta column-file"><button type="button"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></button></span>
+                    @if($item->display == $item::DISPLAY_SECRET)
+                        <span class="item-meta column-lock"><i class="xi-lock"></i> <span class="blind-mobile">비밀글</span></span>
+                    @endif
+                    @if(count($item->files) > 0)
+                        <span class="item-meta column-file"><i class="xi-paperclip"></i> <span class="blind-mobile">첨부파일</span></span>
+                    @endif
 
                     {{-- 게시판 출력 순서 항목 --}}
                     @foreach ($skinConfig['listColumns'] as $columnName)

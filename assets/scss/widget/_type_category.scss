@@ -1,0 +1,86 @@
+
+/* section-category-tfcw */
+.section-category-tfcw {
+  margin-bottom: 32px;
+
+  p {
+    margin: 0;
+  }
+
+  .list-category-tfc {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+    overflow: hidden;
+  }
+
+  .item-category {
+    width: calc(100%/2 - 8px);
+    margin: 0 4px 32px 4px;
+  }
+
+  .link-category {
+    display: block;
+    color: #000;
+    text-decoration: none;
+    overflow: hidden;
+  }
+
+  .thumbnail {
+    display: block;
+    padding-top: 100%;
+    transition: transform 0.2s;
+    @extend %thumbnail-background;
+  }
+
+  .title-category {
+    position: relative;
+    display: block;
+    background: #fff url(../images/ico_sign.svg) no-repeat right center;
+
+    span {
+      display: inline-block;
+      width: 85%;
+      margin: 16px 0 8px 0;
+      @include ellipsis-1line(24px, 32px);
+    }
+  }
+
+  .text-category {
+    @include ellipsis(48px, 16px, 500, 24px, 2);
+  }
+}
+
+/* media query - section-category-tfcw */
+@include pc {
+  .section-category-tfcw {
+    margin-bottom: 80px;
+
+    .list-category-tfc {
+      margin: 0 -12px;
+    }
+
+    .item-category {
+      width: calc(100%/4 - 24px);
+      margin: 0 12px;
+
+    }
+
+    .thumbnail {
+      position: relative;
+      transition: transform 0.2s;
+      @include thumbnail-dimmed;
+    }
+
+    .thumbnail:hover {
+      transform: scale(1.05);
+      &:after {
+        opacity: 0.3;
+      }
+    }
+
+    .text-category {
+      line-height: 24px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+#wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.wrap-main {
+  .header-main-tfc {
+    transition: box-shadow 1s;
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
+  }
+  .main-tfc {
+    padding-top: 32px;
+  }
+}
+
+.wrap-main-header {
+  .parallax-overlay {
+    display: block;
+  }
+  .main-tfc {
+    padding-top: 398px;
+  }
+}
+
+@include pc {
+  .wrap-main {
+    .main-tfc {
+      padding-top: 80px;
+    }
+  }
+  .wrap-main-header {
+    .main-tfc {
+      padding-top: 566px;
+    }
+  }
+}
+/* container */
+#container {
+  position: relative;
+  width: 100%;
+  padding-top: 56px;
+  left: 0;
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
