@@ -24,6 +24,14 @@ $(function () {
     $('#wrap').toggleClass('menu-open')
   }
 
+  // 이미지 메뉴 hover  토글
+  $('.__xe_menu_image').hover(function () {
+    $(this).data('basic', $(this).attr('src'))
+    $(this).attr('src', $(this).data('hover'))
+  }, function () {
+    $(this).attr('src', $(this).data('basic'))
+  })
+
   $('body').bind('click', function (e) {
     var $target = $(e.target)
     if ($target.closest('.btn-menu').length > 0) {

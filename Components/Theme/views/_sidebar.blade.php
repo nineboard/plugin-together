@@ -7,20 +7,20 @@
                 {{-- 1st menu --}}
                 @foreach(menu_list($config->get('mainMenu')) as $menu1st)
                     <li>
-                        <a href="{{ url($menu1st['url']) }}" @if($menu1st['target'] !== '_self') target="{{ $menu1st['target'] }}" @endif class="link-gnb">{{ $menu1st['link'] }}</a>
+                        <a href="{{ url($menu1st['url']) }}" @if($menu1st['target'] !== '_self') target="{{ $menu1st['target'] }}" @endif class="link-gnb @if($menu1st['selected']) selected @endif">{{ $menu1st['link'] }}</a>
 
                         {{-- 2nd menu --}}
                         @if(count($menu1st['children']))
                             <ul class="list-gnb reset-list">
                                 @foreach($menu1st['children'] as $menu2nd)
                                     <li>
-                                        <a  href="{{ url($menu2nd['url']) }}" @if($menu2nd['target'] !== '_self') target="{{ $menu2nd['target'] }}" @endif class="link-gnb">{{ $menu2nd['link'] }}</a>
+                                        <a  href="{{ url($menu2nd['url']) }}" @if($menu2nd['target'] !== '_self') target="{{ $menu2nd['target'] }}" @endif class="link-gnb @if($menu2nd['selected']) selected @endif">{{ $menu2nd['link'] }}</a>
 
                                         {{-- 3rd menu --}}
                                         @if(count($menu2nd['children']))
                                             <ul class="list-gnb-depth reset-list">
                                                 @foreach($menu2nd['children'] as $menu3rd)
-                                                    <li><a href="{{ url($menu3rd['url']) }}" @if($menu3rd['target'] !== '_self') target="{{ $menu3rd['target'] }}" @endif class="link-gnb-depth">{{ $menu3rd['link'] }}</a></li>
+                                                    <li><a href="{{ url($menu3rd['url']) }}" @if($menu3rd['target'] !== '_self') target="{{ $menu3rd['target'] }}" @endif class="link-gnb-depth @if($menu3rd['selected']) selected @endif">{{ $menu3rd['link'] }}</a></li>
                                                 @endforeach
                                             </ul>
                                         @endif
