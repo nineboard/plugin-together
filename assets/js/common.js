@@ -45,6 +45,9 @@ $(function () {
       $('.area_search').hide()
     }
   })
+  $('body').on('touchstart', '.bg-sidebar', function () {
+    menuToggle()
+  })
 
   $('.btn_close').on('click', function () {
     $('.area_sidebar').hide()
