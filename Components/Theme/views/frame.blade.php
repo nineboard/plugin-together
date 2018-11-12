@@ -1,4 +1,4 @@
-<div id="wrap" class="@if($layoutType === 'main') wrap-main @endif @if($config->get('useMainHeader', 'Y') === 'Y') wrap-main-header @endif">
+<div id="wrap" class="@if($layoutType === 'main') wrap-main @else wrap-sub @endif @if($config->get('useMainHeader', 'Y') === 'Y') wrap-main-header @endif">
     @include($theme::view('_sidebar'))
 
     <div id="container">

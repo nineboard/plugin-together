@@ -9,7 +9,6 @@
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.2);
   }
   .main-tfc {
-    padding-top: 32px;
   }
 }
 
@@ -18,20 +17,18 @@
     display: block;
   }
   .main-tfc {
-    position: relative;
-    top: 398px;
+    margin-top: 398px;
   }
 }
 
 @include pc {
   .wrap-main {
     .main-tfc {
-      padding-top: 80px;
     }
   }
   .wrap-main-header {
     .main-tfc {
-      top: 566px;
+      margin-top: 566px;
     }
   }
 }
