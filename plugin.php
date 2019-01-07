@@ -13,4 +13,9 @@ class Plugin extends AbstractPlugin
     public function boot()
     {
     }
+
+    public function install()
+    {
+        Installer::install();
+    }
 }
