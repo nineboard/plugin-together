@@ -18,6 +18,7 @@ use App\Facades\XeStorage;
 use Illuminate\Support\Facades\Auth;
 use Xpressengine\Media\Models\Image;
 use Xpressengine\Permission\Grant;
+use Xpressengine\Plugins\Banner\Models\Group;
 use Xpressengine\Plugins\Banner\Widgets\Widget;
 use Xpressengine\Plugins\Board\Components\Widgets\ArticleList\ArticleListWidget;
 use Xpressengine\Plugins\Together\Components\Skins\ArticleList\Gallery\GallerySkin;
@@ -27,9 +28,26 @@ use Xpressengine\Plugins\Together\Components\Skins\ArticleList\Notice\NoticeSkin
 use Xpressengine\Plugins\Together\Components\Skins\Banner\Category\CategorySkin;
 use Xpressengine\Plugins\Together\Components\Skins\Banner\Dday\DdaySkin;
 use Xpressengine\Plugins\Together\Components\Theme\Theme;
+use Xpressengine\Routing\InstanceRoute;
 
 class Installer
 {
+
+    public static function checkUrl()
+    {
+
+    }
+
+
+    public static function getUrlPrefix($url)
+    {
+        if (InstanceRoute::where('url', $url )->count() > 0) {
+            return self::getUrlPrefix($url.'-');
+        } else {
+            return $url;
+        }
+    }
+
     public static function install()
     {
         $menu = self::createMenu();
@@ -46,26 +64,34 @@ class Installer
     {
         $imageArray = self::createImageArrayFromPath(Plugin::path('assets/images/main_img.jpg'),'main_image.jpg');
         $image=Image::find($imageArray['id']);
-        XeConfig::add('theme.settings.'.Theme::getId(),[
-            'mainMenu'=>$menuId,
-            'useSnb'=>'N',
-            'useCopyright'=>'N'
-        ]);
-        XeConfig::add('theme.settings.'.Theme::getId().'.0', [
-            'layoutType'=>'sub',
-            'useMainHeader'=>'N'
-        ]);
-        XeConfig::add('theme.settings.'.Theme::getId().'.1', [
-            'layoutType'=>'main',
-            'useMainHeader'=>'Y',
-            'headerImage'=>[
-                'id'=>$imageArray['id'],
-                'path'=> $image->url(),
-                'filename'=>$image->filename
-            ],
-            'headerTitle'=>'Together 메인 테마입니다.',
-            'headerDescription'=>'Together 메인 테마입니다.'
-        ]);
+        if(is_null(XeConfig::get('theme.settings.'.Theme::getId()))){
+            XeConfig::add('theme.settings.'.Theme::getId(),[
+                'mainMenu'=>$menuId,
+                'useSnb'=>'N',
+                'useCopyright'=>'N'
+            ]);
+        }
+
+        if(is_null(XeConfig::get('theme.settings.'.Theme::getId().'.0'))){
+            XeConfig::add('theme.settings.'.Theme::getId().'.0', [
+                'layoutType'=>'sub',
+                'useMainHeader'=>'N'
+            ]);
+        }
+
+        if(is_null(XeConfig::get('theme.settings.'.Theme::getId().'.1'))){
+            XeConfig::add('theme.settings.'.Theme::getId().'.1', [
+                'layoutType'=>'main',
+                'useMainHeader'=>'Y',
+                'headerImage'=>[
+                    'id'=>$imageArray['id'],
+                    'path'=> $image->url(),
+                    'filename'=>$image->filename
+                ],
+                'headerTitle'=>'Together 메인 테마입니다.',
+                'headerDescription'=>'Together 메인 테마입니다.'
+            ]);
+        }
     }
 
     public static function createMenu()
@@ -103,6 +129,7 @@ class Installer
     public static function createIndexPage($menu)
     {
         $theme = Theme::getId().'.1';
+        $url = self::getUrlPrefix('together');
 
         XeDB::beginTransaction();
 
@@ -110,7 +137,7 @@ class Installer
 
             $item = XeMenu::createItem($menu, [
                 'title' => '샘플메인페이지',
-                'url' => trim('together', " \t\n\r\0\x0B/"),
+                'url' => trim($url, " \t\n\r\0\x0B/"),
                 'description' => 'Together 샘플페이지',
                 'target' => '_self',
                 'type' => 'widgetpage@widgetpage',
@@ -134,13 +161,14 @@ class Installer
 
     public static function  createBoardPage($menu)
     {
+        $url = self::getUrlPrefix('together-board');
         XeDB::beginTransaction();
 
         try {
 
             $item = XeMenu::createItem($menu, [
                 'title' => '샘플게시판페이지',
-                'url' => trim('together-board', " \t\n\r\0\x0B/"),
+                'url' => trim($url, " \t\n\r\0\x0B/"),
                 'description' => 'Together 게시판페이지',
                 'target' => '_self',
                 'type' => 'board@board',
@@ -187,10 +215,20 @@ class Installer
         app('xe.board.handler')->add($inputs, Auth::user(), $config);
     }
 
+    public static function getUniqueBannerTitle($title)
+    {
+        if (Group::where('title',$title)->count() > 0) {
+            return self::getUniqueBannerTitle($title.'-');
+        } else {
+            return $title;
+        }
+    }
+
     public static function createBanner($title, $skin)
     {
+        $unique_title=self::getUniqueBannerTitle($title);
         return app('xe.banner')->createGroup([
-            'title'=>$title,
+            'title'=>$unique_title,
             'skin'=>$skin
         ]);
     }
