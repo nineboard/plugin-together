@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\Banner\Dday;
 
 use Xpressengine\Skin\GenericSkin;
@@ -39,7 +40,7 @@ class DdaySkin extends BannerWidgetSkin
                         $dday = Carbon::parse($dday_at);
                         $dday = $dday->diffInDays(Carbon::now(), false);
                         $diff = ($dday <= 0) ? 'D - ' . abs($dday) : 'D + ' . abs($dday);
-                    } catch(\Exception $e) {
+                    } catch (\Exception $e) {
                         $diff = 'invalid';
                     }
                     $item['etc'] = array_merge(array_get($item, 'etc'), compact('diff'));

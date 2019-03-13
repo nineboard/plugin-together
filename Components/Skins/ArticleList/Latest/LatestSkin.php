@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\ArticleList\Latest;
 
 use Xpressengine\Skin\GenericSkin;

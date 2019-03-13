@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\ArticleList\Media;
 
 use Xpressengine\Skin\GenericSkin;

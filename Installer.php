@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hero
- * Date: 07/01/2019
- * Time: 11:49 AM
- */
 
 namespace Xpressengine\Plugins\Together;
-
 
 use App\Facades\XeConfig;
 use App\Facades\XeDB;
@@ -32,17 +25,15 @@ use Xpressengine\Routing\InstanceRoute;
 
 class Installer
 {
-
     public static function checkUrl()
     {
 
     }
 
-
     public static function getUrlPrefix($url)
     {
-        if (InstanceRoute::where('url', $url )->count() > 0) {
-            return self::getUrlPrefix($url.'-');
+        if (InstanceRoute::where('url', $url)->count() > 0) {
+            return self::getUrlPrefix($url . '-');
         } else {
             return $url;
         }
@@ -54,42 +45,44 @@ class Installer
         self::setTheme($menu->id);
         $index = self::createIndexPage($menu);
         $board = self::createBoardPage($menu);
-        for($i=0; $i<6; $i++){
+
+        for ($i = 0; $i < 6; $i++) {
             self::createArticleInBoard($board->id);
         }
+
         self::createWidgetIn($index, $board->id);
     }
 
     public static function setTheme($menuId)
     {
-        $imageArray = self::createImageArrayFromPath(Plugin::path('assets/images/main_img.jpg'),'main_image.jpg');
-        $image=Image::find($imageArray['id']);
-        if(is_null(XeConfig::get('theme.settings.'.Theme::getId()))){
-            XeConfig::add('theme.settings.'.Theme::getId(),[
-                'mainMenu'=>$menuId,
-                'useSnb'=>'N',
-                'useCopyright'=>'N'
+        $imageArray = self::createImageArrayFromPath(Plugin::path('assets/images/main_img.jpg'), 'main_image.jpg');
+        $image = Image::find($imageArray['id']);
+        if (is_null(XeConfig::get('theme.settings.' . Theme::getId()))) {
+            XeConfig::add('theme.settings.' . Theme::getId(), [
+                'mainMenu' => $menuId,
+                'useSnb' => 'N',
+                'useCopyright' => 'N'
             ]);
         }
 
-        if(is_null(XeConfig::get('theme.settings.'.Theme::getId().'.0'))){
-            XeConfig::add('theme.settings.'.Theme::getId().'.0', [
-                'layoutType'=>'sub',
-                'useMainHeader'=>'N'
+        if (is_null(XeConfig::get('theme.settings.' . Theme::getId() . '.0'))) {
+            XeConfig::add('theme.settings.' . Theme::getId() . '.0', [
+                'layoutType' => 'sub',
+                'useMainHeader' => 'N'
             ]);
         }
 
-        if(is_null(XeConfig::get('theme.settings.'.Theme::getId().'.1'))){
-            XeConfig::add('theme.settings.'.Theme::getId().'.1', [
-                'layoutType'=>'main',
-                'useMainHeader'=>'Y',
-                'headerImage'=>[
-                    'id'=>$imageArray['id'],
-                    'path'=> $image->url(),
-                    'filename'=>$image->filename
+        if (is_null(XeConfig::get('theme.settings.' . Theme::getId() . '.1'))) {
+            XeConfig::add('theme.settings.' . Theme::getId() . '.1', [
+                'layoutType' => 'main',
+                'useMainHeader' => 'Y',
+                'headerImage' => [
+                    'id' => $imageArray['id'],
+                    'path' => $image->url(),
+                    'filename' => $image->filename
                 ],
-                'headerTitle'=>'Together 메인 테마입니다.',
-                'headerDescription'=>'Together 메인 테마입니다.'
+                'headerTitle' => 'Together 메인 테마입니다.',
+                'headerDescription' => 'Together 메인 테마입니다.'
             ]);
         }
     }
@@ -98,10 +91,9 @@ class Installer
     {
         $menuTitle = 'Together';
         $menuDescription = 'Together 설치시 나타나는 기본 메뉴 입니다.';
-        $defaultTheme=Theme::getId().'.0';
+        $defaultTheme = Theme::getId() . '.0';
         $desktopTheme = $defaultTheme;
         $mobileTheme = $defaultTheme;
-
 
         XeDB::beginTransaction();
 
@@ -128,13 +120,12 @@ class Installer
 
     public static function createIndexPage($menu)
     {
-        $theme = Theme::getId().'.1';
+        $theme = Theme::getId() . '.1';
         $url = self::getUrlPrefix('together');
 
         XeDB::beginTransaction();
 
         try {
-
             $item = XeMenu::createItem($menu, [
                 'title' => '샘플메인페이지',
                 'url' => trim($url, " \t\n\r\0\x0B/"),
@@ -144,10 +135,10 @@ class Installer
                 'ordering' => 0,
                 'activated' => 1,
                 'parent_id' => null
-            ],[
+            ], [
                 'site_key' => $menu->site_key
             ]);
-            app('xe.menu')->setMenuItemTheme($item,$theme,$theme);
+            app('xe.menu')->setMenuItemTheme($item, $theme, $theme);
             app('xe.permission')->register(XeMenu::permKeyString($item), new Grant(), $menu->site_key);
         } catch (\Exception $e) {
             XeDB::rollback();
@@ -156,16 +147,17 @@ class Installer
         }
 
         XeDB::commit();
+
         return $item;
     }
 
-    public static function  createBoardPage($menu)
+    public static function createBoardPage($menu)
     {
         $url = self::getUrlPrefix('together-board');
+
         XeDB::beginTransaction();
 
         try {
-
             $item = XeMenu::createItem($menu, [
                 'title' => '샘플게시판페이지',
                 'url' => trim($url, " \t\n\r\0\x0B/"),
@@ -175,14 +167,14 @@ class Installer
                 'ordering' => 0,
                 'activated' => 1,
                 'parent_id' => null
-            ],[
+            ], [
                 'page_title' => 'Together Board',
                 'board_name' => 'Together 게시판',
                 'site_key' => $menu->site_key,
                 'revision' => 'true',
                 'division' => 'false',
             ]);
-            app('xe.menu')->setMenuItemTheme($item,null,null);
+            app('xe.menu')->setMenuItemTheme($item, null, null);
             app('xe.permission')->register(XeMenu::permKeyString($item), new Grant(), $menu->site_key);
         } catch (\Exception $e) {
             XeDB::rollback();
@@ -196,7 +188,7 @@ class Installer
 
     public static function createArticleInBoard($board_id)
     {
-        $imageArray = self::createImageArrayFromPath(Plugin::path('assets/images/board_img.jpg'),'board_image.jpg');
+        $imageArray = self::createImageArrayFromPath(Plugin::path('assets/images/board_img.jpg'), 'board_image.jpg');
         $inputs['head'] = null;
         $inputs['queryString'] = null;
         $inputs['title'] = '아이돌룸 본방을 못보다니!!';
@@ -217,8 +209,8 @@ class Installer
 
     public static function getUniqueBannerTitle($title)
     {
-        if (Group::where('title',$title)->count() > 0) {
-            return self::getUniqueBannerTitle($title.'-');
+        if (Group::where('title', $title)->count() > 0) {
+            return self::getUniqueBannerTitle($title . '-');
         } else {
             return $title;
         }
@@ -226,32 +218,36 @@ class Installer
 
     public static function createBanner($title, $skin)
     {
-        $unique_title=self::getUniqueBannerTitle($title);
+        $unique_title = self::getUniqueBannerTitle($title);
+
         return app('xe.banner')->createGroup([
-            'title'=>$unique_title,
-            'skin'=>$skin
+            'title' => $unique_title,
+            'skin' => $skin
         ]);
     }
 
     public static function createItemInBanner($bannerGroup, $title, $content, $image, $etc = [])
     {
         $option = [
-            'title'=>$title,
-            'content'=>$content,
-            'image'=>$image,
-            'status'=>'show'
+            'title' => $title,
+            'content' => $content,
+            'image' => $image,
+            'status' => 'show'
         ];
-        if(count($etc)>0){
-            $option['etc']=$etc;
+
+        if (count($etc) > 0) {
+            $option['etc'] = $etc;
         }
+
         app('xe.banner')->createItem($bannerGroup, $option);
     }
 
     public static function createImageArrayFromPath($path, $name)
     {
         $file = file_get_contents($path);
-        $xe_file = XeStorage::create($file, 'public/together/widget/sample',$name);
-        $xe_image= XeMedia::make($xe_file);
+        $xe_file = XeStorage::create($file, 'public/together/widget/sample', $name);
+        $xe_image = XeMedia::make($xe_file);
+
         return [
             'id' => $xe_file->id,
             'filename' => $xe_file->clientname,
@@ -261,13 +257,12 @@ class Installer
 
     public static function createWidgetIn($menu_item, $board_id)
     {
-
-        $media=[
-            'board_id'=>$board_id,
-            'take'=>'2',
-            'recent_date'=>0,
-            'order_type'=>'',
-            '@attributes' =>[
+        $media = [
+            'board_id' => $board_id,
+            'take' => '2',
+            'recent_date' => 0,
+            'order_type' => '',
+            '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => '미디어위젯',
                 'skin-id' => MediaSkin::getId()
@@ -275,24 +270,23 @@ class Installer
         ];
 
         $category_banner = self::createBanner('카테고리 위젯', CategorySkin::getId());
-        $category_sample_image = self::createImageArrayFromPath(Plugin::path('assets/images/category_img.jpg'),'category_image.jpg');
+        $category_sample_image = self::createImageArrayFromPath(Plugin::path('assets/images/category_img.jpg'), 'category_image.jpg');
         self::createItemInBanner($category_banner, 'Red Velvet 레드벨벳', '레드벨벳이 참 예쁘네요.', $category_sample_image);
         self::createItemInBanner($category_banner, 'Red Velvet 레드벨벳', '레드벨벳이 참 예쁘네요.', $category_sample_image);
         self::createItemInBanner($category_banner, 'Red Velvet 레드벨벳', '레드벨벳이 참 예쁘네요.', $category_sample_image);
         self::createItemInBanner($category_banner, 'Red Velvet 레드벨벳', '레드벨벳이 참 예쁘네요.', $category_sample_image);
 
-        $category=[
-            'group_id'=>$category_banner->id,
-            '@attributes' =>[
+        $category = [
+            'group_id' => $category_banner->id,
+            '@attributes' => [
                 'id' => Widget::getId(),
                 'title' => '카테고리위젯',
                 'skin-id' => CategorySkin::getId()
             ]
         ];
 
-
         $dday_banner = self::createBanner('디데이 위젯', DdaySkin::getId());
-        $dday_sample_image = self::createImageArrayFromPath(Plugin::path('assets/images/dday_img.jpg'),'dday_image.jpg');
+        $dday_sample_image = self::createImageArrayFromPath(Plugin::path('assets/images/dday_img.jpg'), 'dday_image.jpg');
 
         self::createItemInBanner(
             $dday_banner,
@@ -304,56 +298,56 @@ class Installer
             ]
         );
 
-        $dday=[
-            'group_id'=>$dday_banner->id,
-            '@attributes' =>[
+        $dday = [
+            'group_id' => $dday_banner->id,
+            '@attributes' => [
                 'id' => Widget::getId(),
                 'title' => '디데이위젯',
                 'skin-id' => DdaySkin::getId()
             ]
         ];
-        $latest=[
-            'board_id'=>$board_id,
-            'take'=>'5',
-            'recent_date'=>0,
-            'order_type'=>'',
-            '@attributes' =>[
+        $latest = [
+            'board_id' => $board_id,
+            'take' => '5',
+            'recent_date' => 0,
+            'order_type' => '',
+            '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => '최신글위젯',
                 'skin-id' => LatestSkin::getId()
             ]
         ];
-        $notice=[
-            'board_id'=>$board_id,
-            'take'=>'2',
-            'recent_date'=>0,
-            'order_type'=>'',
-            '@attributes' =>[
+        $notice = [
+            'board_id' => $board_id,
+            'take' => '2',
+            'recent_date' => 0,
+            'order_type' => '',
+            '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => 'HOT ISSUE',
                 'skin-id' => NoticeSkin::getId()
             ]
         ];
-        $gallery=[
-            'board_id'=>$board_id,
-            'take'=>'6',
-            'recent_date'=>0,
-            'order_type'=>'',
-            '@attributes' =>[
+        $gallery = [
+            'board_id' => $board_id,
+            'take' => '6',
+            'recent_date' => 0,
+            'order_type' => '',
+            '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => 'STAR GALLERY',
                 'skin-id' => GallerySkin::getId()
             ]
         ];
-        app('xe.widgetbox')->update('widgetpage-'.$menu_item->id, ['content' => [
 
+        app('xe.widgetbox')->update('widgetpage-' . $menu_item->id, ['content' => [
             [
                 [
-                    'grid'=>[
-                        'md'=>'12'
+                    'grid' => [
+                        'md' => '12'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $media
                     ]
                 ]
@@ -361,42 +355,42 @@ class Installer
 
             [
                 [
-                    'grid'=>[
-                        'md'=>'12'
+                    'grid' => [
+                        'md' => '12'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $category
                     ]
                 ]
             ],
             [
                 [
-                    'grid'=>[
-                        'md'=>'9'
+                    'grid' => [
+                        'md' => '9'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $dday
                     ]
                 ],
                 [
-                    'grid'=>[
-                        'md'=>'3'
+                    'grid' => [
+                        'md' => '3'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $latest
                     ]
                 ]
             ],
             [
                 [
-                    'grid'=>[
-                        'md'=>'12'
+                    'grid' => [
+                        'md' => '12'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $notice
                     ]
                 ]
@@ -404,11 +398,11 @@ class Installer
 
             [
                 [
-                    'grid'=>[
-                        'md'=>'12'
+                    'grid' => [
+                        'md' => '12'
                     ],
-                    'rows'=>[],
-                    'widgets'=>[
+                    'rows' => [],
+                    'widgets' => [
                         $gallery
                     ]
                 ]

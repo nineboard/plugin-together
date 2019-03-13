@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\ArticleList\Notice;
 
 use Xpressengine\Skin\GenericSkin;

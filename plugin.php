@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together;
 
 use Xpressengine\Plugin\AbstractPlugin;

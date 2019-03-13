@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\Banner\Category;
 
 use Xpressengine\Skin\GenericSkin;

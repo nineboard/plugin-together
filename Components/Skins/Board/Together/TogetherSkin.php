@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Skins\Board\Together;
 
 use Xpressengine\Config\ConfigEntity;

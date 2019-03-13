@@ -1,4 +1,5 @@
 <?php
+
 namespace Xpressengine\Plugins\Together\Components\Theme;
 
 use App\Facades\XePresenter;
