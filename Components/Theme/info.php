@@ -81,12 +81,12 @@ return [
                     'description' => 'Header 이미지'
                 ],
                 'headerTitle' => [
-                    '_type' => 'langText',
+                    '_type' => 'langTextarea',
                     'label' => 'headerTitle',
                     'description' => 'headerTitle',
                 ],
                 'headerDescription' => [
-                    '_type' => 'langText',
+                    '_type' => 'langTextarea',
                     'label' => 'headerDescription',
                     'description' => 'headerDescription',
                 ],

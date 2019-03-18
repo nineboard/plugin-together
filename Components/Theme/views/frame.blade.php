@@ -9,8 +9,8 @@
             <section class="section-theme-basic-tfc" @if($config->get('headerImage.path')) style="background-image:url('{{ $config->get('headerImage.path') }}')" @endif>
                 <div class="inner-section-theme-basic">
                     <a class="link-basic">
-                        <h2 class="title-basic">{{ xe_trans($config->get('headerTitle', '')) }}</h2>
-                        <p class="text-basic">{{ xe_trans($config->get('headerDescription', '')) }}</p>
+                        <h2 class="title-basic">{!! nl2br(xe_trans($config->get('headerTitle', ''))) !!}</h2>
+                        <p class="text-basic">{!! nl2br(xe_trans($config->get('headerDescription', ''))) !!}</p>
                     </a>
                 </div>
             </section>
