@@ -17,6 +17,6 @@ class Plugin extends AbstractPlugin
 
     public function install()
     {
-        Installer::install();
+//        Installer::install();
     }
 }
