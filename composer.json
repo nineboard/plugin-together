@@ -30,11 +30,6 @@
           "name": "Together",
           "description": "Together"
         },
-        "module/board@board/skin/together@board": {
-          "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\Board\\Together\\TogetherSkin",
-          "name": "Together 게시판 스킨",
-          "description": "Together 게시판 스킨"
-        },
         "widget/board@list/skin/together@gallery": {
           "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Gallery\\GallerySkin",
           "name": "Together-gallery 스킨",
