@@ -138,7 +138,12 @@
 @include pc {
   .menu-open #container {
     left: 320px;
+    padding-top: 0;
     transition: left .3s ease-in-out;
+  }
+
+  .menu-open .header-tfc {
+    position: relative;
   }
 
   .inner-sidebar {

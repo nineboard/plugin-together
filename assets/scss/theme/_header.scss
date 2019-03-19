@@ -2,6 +2,7 @@
 .header-tfc {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 2005;
   width: 100%;
   height: 56px;
@@ -23,7 +24,7 @@
 
   button:hover {
     color: rgba(0, 0, 0, 1);
-    transition: .2s;
+    transition: .3s ease-in-out;
   }
 
   .btn-menu {
