@@ -1,10 +1,10 @@
-<div id="wrap" class="@if($layoutType === 'main') wrap-main @else wrap-sub @endif @if($config->get('useMainHeader', 'Y') === 'Y') wrap-main-header @endif">
+<div id="wrap" class="@if($layoutType === 'main') wrap-main @else wrap-sub @endif @if($layoutType === 'main' && $config->get('useMainHeader', 'Y') === 'Y') wrap-main-header @endif">
     @include($theme::view('_sidebar'))
 
     <div id="container">
         @include($theme::view('_header'))
 
-        @if($config->get('useMainHeader', 'Y') === 'Y')
+        @if($layoutType === 'main' && $config->get('useMainHeader', 'Y') === 'Y')
             <!-- section-theme-basic-tfc -->
             <section class="section-theme-basic-tfc" @if($config->get('headerImage.path')) style="background-image:url('{{ $config->get('headerImage.path') }}')" @endif>
                 <div class="inner-section-theme-basic">
