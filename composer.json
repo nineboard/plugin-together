@@ -28,7 +28,8 @@
         "theme/together@together": {
           "class": "Xpressengine\\Plugins\\Together\\Components\\Theme\\Theme",
           "name": "Together",
-          "description": "Together"
+          "description": "Together",
+          "screenshot": "/plugins/together/screenshots/main.png"
         },
         "widget/board@list/skin/together@gallery": {
           "class": "Xpressengine\\Plugins\\Together\\Components\\Skins\\ArticleList\\Gallery\\GallerySkin",
