@@ -275,7 +275,7 @@ class DemoDataManager
             'status' => 'show',
             'title' => '홈 화면 변경하기',
             'content' => '사이트 홈을 설정해보세요',
-            'link' => '#',
+            'link' => '#1',
             'image' => $imageInfo,
         ];
 
@@ -284,7 +284,7 @@ class DemoDataManager
             'status' => 'show',
             'title' => '메뉴 구조 구성하기',
             'content' => '메뉴를 만들어 보세요',
-            'link' => '#',
+            'link' => '#2',
             'image' => $imageInfo,
         ];
 
@@ -293,7 +293,7 @@ class DemoDataManager
             'status' => 'show',
             'title' => '테마 디자인 변경하기',
             'content' => '다른 테마로 변경해보세요',
-            'link' => '#',
+            'link' => '#3',
             'image' => $imageInfo,
         ];
 
@@ -302,7 +302,7 @@ class DemoDataManager
             'status' => 'show',
             'title' => '플러그인 관리하기',
             'content' => '새로운 플러그인을 설치해보세요',
-            'link' => '#',
+            'link' => '#4',
             'image' => $imageInfo,
         ];
 
