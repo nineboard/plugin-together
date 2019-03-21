@@ -21,7 +21,7 @@ $(function () {
 
   /* 메뉴 토글 */
   function menuToggle () {
-    $('#wrap').toggleClass('menu-open')
+    $('#wrap').toggleClass('menu-open-tfc')
   }
 
   // 이미지 메뉴 hover  토글
@@ -39,7 +39,7 @@ $(function () {
     } else if ($target.closest('.btn_search').length > 0) {
       searchToggle()
     } else if ($target.closest('.area_search').length == 0 && $target.closest('.area_menu').length == 0) {
-      $('#wrap').removeClass('menu-open')
+      $('#wrap').removeClass('menu-open-tfc')
       $('.btn-menu').removeClass('btn_menu_off')
       $('#container').removeClass('search_on')
       $('.area_search').hide()

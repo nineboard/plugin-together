@@ -16,7 +16,7 @@
     z-index: 2015;
     transition: left .3s ease-in-out;
 
-    .menu-open & {
+    .menu-open-tfc & {
       left: 0;
     }
 
@@ -136,13 +136,13 @@
 }
 
 @include pc {
-  .menu-open #container {
+  .menu-open-tfc #container {
     left: 320px;
     padding-top: 0;
     transition: left .3s ease-in-out;
   }
 
-  .menu-open .header-tfc {
+  .menu-open-tfc .header-tfc {
     position: relative;
   }
 
@@ -158,7 +158,7 @@
 }
 
 @include mobile {
-  .menu-open .bg-sidebar {
+  .menu-open-tfc .bg-sidebar {
     display: block !important;
   }
 }
