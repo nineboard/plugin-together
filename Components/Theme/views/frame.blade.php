@@ -6,7 +6,7 @@
 
         @if($layoutType === 'main' && $config->get('useMainHeader', 'Y') === 'Y')
             <!-- section-theme-basic-tfc -->
-            <section class="section-theme-basic-tfc" @if($config->get('headerImage.path')) style="background-image:url('{{ $config->get('headerImage.path') }}')" @endif>
+            <section class="section-theme-basic-tfc" @if($config->get('headerImage.id')) style="background-image:url('{{ \Xpressengine\Media\Models\Image::find($config->get('headerImage.id'))->url() }}')" @endif>
                 <div class="inner-section-theme-basic">
                     <a class="link-basic">
                         <h2 class="title-basic">{!! nl2br(xe_trans($config->get('headerTitle', ''))) !!}</h2>
