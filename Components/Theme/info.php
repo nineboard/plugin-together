@@ -19,7 +19,8 @@ return [
                 ],
                 'mainMenu' => [
                     '_type' => 'menu',
-                    'label' => '메인 메뉴 (GNB. 3 depth)',
+                    'label' => '메인 메뉴',
+                    'description' => '3단계까지 출력 가능'
                 ],
             ]
         ],
@@ -34,26 +35,25 @@ return [
                 /* 로고 설정 */
                 'logoType' => [
                     '_type' => 'select',
-                    'label' => 'Logo 설정',
+                    'label' => '로고 설정',
                     'options' => [
-                        'text' => 'Logo 텍스트 사용',
-                        'image' => 'Logo 이미지 사용',
+                        'text' => '로고 텍스트 사용',
+                        'image' => '로고 이미지 사용',
                     ]
                 ],
                 'logoText' => [
                     '_type' => 'langText',
-                    'label' => 'Logo 텍스트',
+                    'label' => '로고 텍스트',
                     'description' => '상단에 표시될 사이트 이름 및 로고 이미지의 대체 텍스트',
                 ],
                 'logoImage' => [
                     '_type' => 'image',
-                    'label' => 'Logo 이미지',
-                    'description' => 'Logo 이미지'
+                    'label' => '로고 이미지',
+                    'description' => '로고 이미지'
                 ],
                 'slogan' => [
                     '_type' => 'langText',
-                    'label' => 'slogan',
-                    'description' => 'slogan',
+                    'label' => '슬로건',
                 ],
             ]
         ],
@@ -67,28 +67,24 @@ return [
             'fields' => [
                 'useMainHeader' => [
                     '_type' => 'select',
-                    'label' => 'useMainHeader',
+                    'label' => '메인 헤더 출력 여부',
                     'options' => [
                         'Y' => '표시함',
                         'N' => '표시 안 함'
                     ],
-                    'description' => '메인 Header 사용함?'
                 ],
                 /* 헤더 이미지 설정 */
                 'headerImage' => [
                     '_type' => 'image',
-                    'label' => 'Header 이미지',
-                    'description' => 'Header 이미지'
+                    'label' => '헤더 이미지',
                 ],
                 'headerTitle' => [
                     '_type' => 'langTextarea',
-                    'label' => 'headerTitle',
-                    'description' => 'headerTitle',
+                    'label' => '헤더 제목',
                 ],
                 'headerDescription' => [
                     '_type' => 'langTextarea',
-                    'label' => 'headerDescription',
-                    'description' => 'headerDescription',
+                    'label' => '헤더 설명',
                 ],
             ]
         ],
@@ -97,12 +93,12 @@ return [
         [
             'section' => [
                 'class' => 'sidebar-section',
-                'title' => 'sidebar 설정'
+                'title' => '사이드바 설정'
             ],
             'fields' => [
                 'useSnb' => [
                     '_type' => 'select',
-                    'label' => 'SNB 사용 여부',
+                    'label' => '사이드바 사용 여부',
                     'options' => [
                         'N' => '사용 안함',
                         'Y' => '사용'
@@ -110,7 +106,8 @@ return [
                 ],
                 'sidebarMenu' => [
                     '_type' => 'menu',
-                    'label' => 'sidebar 메뉴 (SNB, 1 depth)',
+                    'label' => '사이드바 메뉴',
+                    'description' => '1단계까지 출력 가능'
                 ]
             ]
         ],
@@ -119,24 +116,24 @@ return [
         [
             'section' => [
                 'class' => 'social-section',
-                'title' => 'social 설정'
+                'title' => 'SNS 설정'
             ],
             'fields' => [
                 'socialTwitter' => [
                     '_type' => 'text',
-                    'label' => 'socialTwitter',
+                    'label' => '트위터 링크',
                 ],
                 'socialYoutube' => [
                     '_type' => 'text',
-                    'label' => 'socialYoutube',
+                    'label' => '유튜브 링크',
                 ],
                 'socialInstagram' => [
                     '_type' => 'text',
-                    'label' => 'socialInstagram',
+                    'label' => '인스타그램 링크',
                 ],
                 'socialFacebook' => [
                     '_type' => 'text',
-                    'label' => 'socialFacebook',
+                    'label' => '페이스북 링크',
                 ]
             ]
         ],
@@ -145,7 +142,7 @@ return [
         [
             'section' => [
                 'class' => 'footer-section',
-                'title' => 'footer 설정'
+                'title' => '푸터 설정'
             ],
             'fields' => [
                 'useCopyright' => [
@@ -158,7 +155,7 @@ return [
                 ],
                 'copyrightContent' => [
                     '_type' => 'textarea',
-                    'label' => '카피라이트',
+                    'label' => 'Copyright',
                     'description' => 'HTML사용 가능'
                 ]
             ]
