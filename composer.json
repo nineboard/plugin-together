@@ -8,16 +8,16 @@
     "xe"
   ],
   "license": "LGPL-2.1-or-later",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "xpressengine-plugin",
   "support": {
     "email": "developers@xpressengine.com"
   },
   "authors": [
     {
-      "name": "XpressEngine",
+      "name": "XE Developers",
       "email": "developers@xpressengine.com",
-      "homepage": "https://www.xpressengine.io",
+      "homepage": "https://store.xehub.io/plugins/together",
       "role": "Developer"
     }
   ],
@@ -65,6 +65,7 @@
     }
   },
   "require": {
+    "xpressengine/xpressengine": "~3.0.2",
     "xpressengine-plugin/board": "*",
     "xpressengine-plugin/banner": "*"
   },
