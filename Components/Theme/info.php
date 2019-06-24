@@ -168,9 +168,8 @@ return [
     'editable' => [
         'theme.blade.php',
         'frame.blade.php',
-        'main.blade.php',
-        'sub.blade.php',
-        'gnb.blade.php',
-        'fnb.blade.php'
+        '_footer.blade.php',
+        '_header.blade.php',
+        '_sidebar.blade.php'
     ]
 ];
