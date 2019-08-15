@@ -4,7 +4,7 @@
         @foreach($list as $item)
             <li class="item-gallery">
                 <a href="{{ $urlHandler->getShow($item) }}" class="link-gallery">
-                    <span class="thumbnail" @if($item->thumb->board_thumbnail_path) style="background-image:url('{{ $item->thumb->board_thumbnail_path }}')" @endif></span>
+                    <span class="thumbnail" @if($item->thumb != null && $item->thumb->board_thumbnail_path) style="background-image:url('{{ $item->thumb->board_thumbnail_path }}')" @endif></span>
                 </a>
             </li>
         @endforeach
