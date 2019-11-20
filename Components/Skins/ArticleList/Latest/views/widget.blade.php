@@ -1,3 +1,4 @@
+{{ XeFrontend::css('plugins/together/assets/css/widget.css')->load() }}
 <section class="section-latest-tfcw">
     <ul class="list-latest-tfc reset-list">
         @foreach ($list as $idx => $item)

@@ -1,3 +1,4 @@
+{{ XeFrontend::css('plugins/together/assets/css/widget.css')->load() }}
 <section class="section-notice-tfcw">
     <h3 class="title-h3"><span>{{ $widgetConfig['@attributes']['title'] }}</span></h3>
     <ul class="list-notice-tfc reset-list">

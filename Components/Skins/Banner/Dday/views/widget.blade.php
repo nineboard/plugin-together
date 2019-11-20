@@ -1,3 +1,4 @@
+{{ XeFrontend::css('plugins/together/assets/css/widget.css')->load() }}
 <section class="section-dday-tfcw">
     @foreach($items as $item)
         <a href="#" class="link-dday" style="background-image:url('{{ $item->imageUrl() }}')">

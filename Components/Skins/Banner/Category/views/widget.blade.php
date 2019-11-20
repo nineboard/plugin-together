@@ -1,3 +1,4 @@
+{{ XeFrontend::css('plugins/together/assets/css/widget.css')->load() }}
 <section class="section-category-tfcw">
     <ul class="list-category-tfc reset-list">
         @foreach($items as $item)
