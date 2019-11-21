@@ -140,12 +140,13 @@
 @include pc {
   .menu-open-tfc #container {
     left: 320px;
-    padding-top: 0;
+    // padding-top: 0;
+    padding-top: 56px;
     transition: left .3s ease-in-out;
   }
 
   .menu-open-tfc .header-tfc {
-    position: relative;
+    // position: relative;
   }
 
   .inner-sidebar {
