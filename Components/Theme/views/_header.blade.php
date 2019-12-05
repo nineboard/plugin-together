@@ -5,7 +5,7 @@
         @if($config->get('logoType', 'text') === 'text')
             <a href="{{ url('/') }}" class="link-logo text" >{{ xe_trans($config->get('logoText', '')) }}</a>
         @else
-            <a href="{{ url('/') }}" class="link-logo image"><img src="{{ $config->get('logoImage.path') }}" alt="{{ xe_trans($config->get('logoText', '')) }}"></a>
+            <a href="{{ url('/') }}" class="link-logo image"><img src="{{ \Xpressengine\Media\Models\Image::find($config->get('logoImage.id'))->url() }}" alt="{{ xe_trans($config->get('logoText', '')) }}"></a>
         @endif
 
         {{-- slogan --}}
