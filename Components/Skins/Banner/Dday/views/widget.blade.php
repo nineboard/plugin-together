@@ -1,7 +1,7 @@
 {{ XeFrontend::css('plugins/together/assets/css/widget.css')->load() }}
 <section class="section-dday-tfcw">
     @foreach($items as $item)
-        <a href="#" class="link-dday" style="background-image:url('{{ $item->imageUrl() }}')">
+        <a href="{{ url($item->link) }}" class="link-dday" style="background-image:url('{{ $item->imageUrl() }}')">
             <div class="inner-dday">
                 <strong class="title-dday">{{ $item->title }}</strong>
                 <div class="box-dday">
