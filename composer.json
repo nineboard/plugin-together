@@ -1,5 +1,5 @@
 {
-  "name": "xpressengine-plugin/together",
+  "name": "nineboard/plugin-together",
   "description": "Together 테마와 이와 잘 어울리는 위젯 스킨을 포함하고 있습니다",
   "keywords": [
     "xpressengine",
@@ -70,11 +70,31 @@
     }
   },
   "require": {
-    "xpressengine/xpressengine": "^3.0.2",
-    "xpressengine-plugin/board": "*",
-    "xpressengine-plugin/banner": "*"
+    "nineboard/nineboard": "dev-main",
+    "nineboard/plugin-board": "dev-main",
+    "nineboard/plugin-banner": "dev-main"
   },
   "require-dev": {
     "laravel/pint": "^1.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git://github.com/nineboard/nineboard.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git://github.com/nineboard/plugin-board.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git://github.com/nineboard/plugin-banner.git"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "xpressengine/installer": true,
+      "wikimedia/composer-merge-plugin": true
+    }
   }
 }
