@@ -5,10 +5,11 @@
  * PHP version 7
  *
  * @category    Together
- * @package     Xpressengine\Plugins\Together
+ *
  * @author      XE Developers <developers@xpressengine.com>
  * @copyright   2019 Copyright XEHub Corp. <https://www.xehub.io>
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
+ *
  * @link        https://xpressengine.io
  */
 
@@ -31,35 +32,44 @@ use Xpressengine\Plugins\Together\Components\Skins\Banner\Dday\DdaySkin;
  * Class DemoDataManager
  *
  * @category    Together
- * @package     Xpressengine\Plugins\Together
+ *
  * @author      XE Developers <developers@xpressengine.com>
  * @copyright   2019 Copyright XEHub Corp. <https://www.xehub.io>
  * @license     http://www.gnu.org/licenses/lgpl-3.0-standalone.html LGPL
+ *
  * @link        https://xpressengine.io
  */
 class DemoDataManager
 {
     const MAIN_THEME_CONFIG = 'Together::MAIN_THEME_CONFIG';
+
     const SUB_THEME_CONFIG = 'Together::SUB_THEME_CONFIG';
+
     const WIDGETPAGE = 'Together::WIDGETPAGE';
+
     const NOTICE_BOARD = 'Together::NOTICE_BOARD';
+
     const BLOG_BOARD = 'Together::BLOG_BOARD';
+
     const BOARD_BOARD = 'Together::BOARD_BOARD';
+
     const GALLERY_BOARD = 'Together::GALLERY_BOARD';
+
     const CATEGORY_BANNER = 'Together::CATEGORY_BANNER';
+
     const DDAY_BANNER = 'Together::DDAY_BANNER';
 
     public function getThemeConfig()
     {
         $multiLines = [
             'headerTitle' => [
-                'ko' => 'Welcome!' . PHP_EOL . 'XE3 Theme Together',
-                'en' => 'Welcome!' . PHP_EOL . 'XE3 Theme Together'
+                'ko' => 'Welcome!'.PHP_EOL.'XE3 Theme Together',
+                'en' => 'Welcome!'.PHP_EOL.'XE3 Theme Together',
             ],
             'headerDescription' => [
-                'ko' => 'XE3에 오신걸 환영합니다.' . PHP_EOL . 'XE3와 함께 손쉬운 나만의 웹사이트를 만들어보세요.',
-                'en' => 'Welcome to XE3.' . PHP_EOL . 'Create your personalized website with XE3.'
-            ]
+                'ko' => 'XE3에 오신걸 환영합니다.'.PHP_EOL.'XE3와 함께 손쉬운 나만의 웹사이트를 만들어보세요.',
+                'en' => 'Welcome to XE3.'.PHP_EOL.'Create your personalized website with XE3.',
+            ],
         ];
 
         foreach ($multiLines as $key => $lang) {
@@ -71,12 +81,12 @@ class DemoDataManager
         $singleLines = [
             'logoText' => [
                 'ko' => 'Together',
-                'en' => 'Together'
+                'en' => 'Together',
             ],
             'slogan' => [
                 'ko' => 'Welcome! XE3 Theme Together',
-                'en' => 'Welcome! XE3 Theme Together'
-            ]
+                'en' => 'Welcome! XE3 Theme Together',
+            ],
         ];
 
         foreach ($singleLines as $key => $lang) {
@@ -111,14 +121,14 @@ class DemoDataManager
             'headerImage' => [
                 'id' => $imgInfo['id'],
                 'path' => $image->url(),
-                'filename' => $image->filename
+                'filename' => $image->filename,
             ],
         ];
         $mainConfig = array_merge($subConfig, $mainConfig, $multiLines, $singleLines);
 
         return [
             self::MAIN_THEME_CONFIG => $mainConfig,
-            self::SUB_THEME_CONFIG => $subConfig
+            self::SUB_THEME_CONFIG => $subConfig,
         ];
     }
 
@@ -126,41 +136,41 @@ class DemoDataManager
     {
         $widgetpageTitle = XeLang::genUserKey();
         foreach (XeLang::getLocales() as $locale) {
-            $value = "Widgetpage";
+            $value = 'Widgetpage';
             if ($locale != 'ko') {
-                $value = "Widgetpage";
+                $value = 'Widgetpage';
             }
             XeLang::save($widgetpageTitle, $locale, $value, false);
         }
         $noticeBoardTitle = XeLang::genUserKey();
         foreach (XeLang::getLocales() as $locale) {
-            $value = "Notice";
+            $value = 'Notice';
             if ($locale != 'ko') {
-                $value = "Notice";
+                $value = 'Notice';
             }
             XeLang::save($noticeBoardTitle, $locale, $value, false);
         }
         $blogBoardTitle = XeLang::genUserKey();
         foreach (XeLang::getLocales() as $locale) {
-            $value = "Blog";
+            $value = 'Blog';
             if ($locale != 'ko') {
-                $value = "Blog";
+                $value = 'Blog';
             }
             XeLang::save($blogBoardTitle, $locale, $value, false);
         }
         $boardBoardTitle = XeLang::genUserKey();
         foreach (XeLang::getLocales() as $locale) {
-            $value = "Board";
+            $value = 'Board';
             if ($locale != 'ko') {
-                $value = "Board";
+                $value = 'Board';
             }
             XeLang::save($boardBoardTitle, $locale, $value, false);
         }
         $galleryBoardTitle = XeLang::genUserKey();
         foreach (XeLang::getLocales() as $locale) {
-            $value = "Gallery";
+            $value = 'Gallery';
             if ($locale != 'ko') {
-                $value = "Gallery";
+                $value = 'Gallery';
             }
             XeLang::save($galleryBoardTitle, $locale, $value, false);
         }
@@ -178,11 +188,11 @@ class DemoDataManager
             'menuType' => [
                 'pageTitle' => 'Welcome to XpressEngine3',
                 'comment' => false,
-                'siteKey' => 'default'
+                'siteKey' => 'default',
             ],
             'options' => [
-                'theme' => self::MAIN_THEME_CONFIG
-            ]
+                'theme' => self::MAIN_THEME_CONFIG,
+            ],
         ];
 
         $menuItems['board'][self::NOTICE_BOARD] = [
@@ -201,7 +211,7 @@ class DemoDataManager
                 'site_key' => 'default',
                 'revision' => 'true',
                 'division' => 'false',
-            ]
+            ],
         ];
 
         $menuItems['board'][self::BLOG_BOARD] = [
@@ -222,8 +232,8 @@ class DemoDataManager
                 'division' => 'false',
             ],
             'options' => [
-                'boardSkin' => BlogSkin::getId()
-            ]
+                'boardSkin' => BlogSkin::getId(),
+            ],
         ];
 
         $menuItems['board'][self::BOARD_BOARD] = [
@@ -242,7 +252,7 @@ class DemoDataManager
                 'site_key' => 'default',
                 'revision' => 'true',
                 'division' => 'false',
-            ]
+            ],
         ];
 
         $menuItems['board'][self::GALLERY_BOARD] = [
@@ -263,18 +273,18 @@ class DemoDataManager
                 'division' => 'false',
             ],
             'options' => [
-                'boardSkin' => GallerySkin::getId()
-            ]
+                'boardSkin' => GallerySkin::getId(),
+            ],
         ];
 
         $menuItems['banner'][self::CATEGORY_BANNER] = [
-            'title' => '카테고리 배너 Demo' . rand(1, 10000),
-            'skin' => CategorySkin::getId()
+            'title' => '카테고리 배너 Demo'.rand(1, 10000),
+            'skin' => CategorySkin::getId(),
         ];
 
         $menuItems['banner'][self::DDAY_BANNER] = [
-            'title' => '디데이 배너 Demo' . rand(1, 10000),
-            'skin' => DdaySkin::getId()
+            'title' => '디데이 배너 Demo'.rand(1, 10000),
+            'skin' => DdaySkin::getId(),
         ];
 
         return $menuItems;
@@ -332,11 +342,11 @@ class DemoDataManager
         $contents[self::DDAY_BANNER][] = [
             'status' => 'show',
             'title' => 'XE Store Beta Open',
-            'content' => 'XE의 멋진 익스텐션과 테마를 만나보세요!' . PHP_EOL . '마음에 드는 플러그인을 골라 웹사이트의 기능을 확장하고 아름답게 꾸며보세요!',
+            'content' => 'XE의 멋진 익스텐션과 테마를 만나보세요!'.PHP_EOL.'마음에 드는 플러그인을 골라 웹사이트의 기능을 확장하고 아름답게 꾸며보세요!',
             'link' => 'https://store.xehub.io',
             'image' => $imageInfo,
             'link_target' => '_blank',
-            'etc' => ['dday_at' => '2019-02-27']
+            'etc' => ['dday_at' => '2019-02-27'],
         ];
 
         return $contents;
@@ -352,8 +362,8 @@ class DemoDataManager
             '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => '미디어 위젯',
-                'skin-id' => MediaSkin::getId()
-            ]
+                'skin-id' => MediaSkin::getId(),
+            ],
         ];
 
         $boardWidget = [
@@ -364,8 +374,8 @@ class DemoDataManager
             '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => '최신글 위젯',
-                'skin-id' => LatestSkin::getId()
-            ]
+                'skin-id' => LatestSkin::getId(),
+            ],
         ];
 
         $noticeWidget = [
@@ -376,8 +386,8 @@ class DemoDataManager
             '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => 'NOTICE',
-                'skin-id' => NoticeSkin::getId()
-            ]
+                'skin-id' => NoticeSkin::getId(),
+            ],
         ];
 
         $galleryWidget = [
@@ -388,8 +398,8 @@ class DemoDataManager
             '@attributes' => [
                 'id' => ArticleListWidget::getId(),
                 'title' => 'Gallery',
-                'skin-id' => TogetherWidgetGallerySkin::getId()
-            ]
+                'skin-id' => TogetherWidgetGallerySkin::getId(),
+            ],
         ];
 
         $ddayBannerWidget = [
@@ -397,8 +407,8 @@ class DemoDataManager
             '@attributes' => [
                 'id' => Widget::getId(),
                 'title' => '디데이 배너 위젯',
-                'skin-id' => DdaySkin::getId()
-            ]
+                'skin-id' => DdaySkin::getId(),
+            ],
         ];
 
         $categoryBannerWidget = [
@@ -406,76 +416,76 @@ class DemoDataManager
             '@attributes' => [
                 'id' => Widget::getId(),
                 'title' => '카테고리 배너 위젯',
-                'skin-id' => CategorySkin::getId()
-            ]
+                'skin-id' => CategorySkin::getId(),
+            ],
         ];
 
         $contents[self::WIDGETPAGE] = [
             [
                 [
                     'grid' => [
-                        'md' => '12'
+                        'md' => '12',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $mediaWidget
-                    ]
-                ]
+                        $mediaWidget,
+                    ],
+                ],
             ],
             [
                 [
                     'grid' => [
-                        'md' => '12'
+                        'md' => '12',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $categoryBannerWidget
-                    ]
-                ]
+                        $categoryBannerWidget,
+                    ],
+                ],
             ],
             [
                 [
                     'grid' => [
-                        'md' => '9'
+                        'md' => '9',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $ddayBannerWidget
-                    ]
+                        $ddayBannerWidget,
+                    ],
                 ],
                 [
                     'grid' => [
-                        'md' => '3'
+                        'md' => '3',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $boardWidget
-                    ]
-                ]
+                        $boardWidget,
+                    ],
+                ],
             ],
             [
                 [
                     'grid' => [
-                        'md' => '12'
+                        'md' => '12',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $noticeWidget
-                    ]
-                ]
+                        $noticeWidget,
+                    ],
+                ],
             ],
 
             [
                 [
                     'grid' => [
-                        'md' => '12'
+                        'md' => '12',
                     ],
                     'rows' => [],
                     'widgets' => [
-                        $galleryWidget
-                    ]
-                ]
-            ]
+                        $galleryWidget,
+                    ],
+                ],
+            ],
         ];
 
         return $contents;
@@ -490,7 +500,7 @@ class DemoDataManager
         return [
             'id' => $imgFile->id,
             'filename' => $imgFile->clientname,
-            'path' => $image->url()
+            'path' => $image->url(),
         ];
     }
 
@@ -501,11 +511,11 @@ class DemoDataManager
         $contents[] = [
             'title' => 'D-Day 배너 설정하기',
             'slug' => 'D-Day 배너 설정하기',
-            'content' => '<img class="__xe_image" data-id="' . $firstExampleImageInfo['id'] . '" src="' . $firstExampleImageInfo['path'] .
-                '" xe-file-id="' . $firstExampleImageInfo['id'] . '" alt="' . $firstExampleImageInfo['filename'] . '" /><br/>' .
-                '<img class="__xe_image" data-id="' . $secondExampleImageInfo['id'] . '" src="' . $secondExampleImageInfo['path'] .
-                '" xe-file-id="' . $secondExampleImageInfo['id'] . '" alt="' . $secondExampleImageInfo['filename'] . '" />'
-                . '<p>메인 페이지의 D-Day 배너를 설정하세요.<br/>
+            'content' => '<img class="__xe_image" data-id="'.$firstExampleImageInfo['id'].'" src="'.$firstExampleImageInfo['path'].
+                '" xe-file-id="'.$firstExampleImageInfo['id'].'" alt="'.$firstExampleImageInfo['filename'].'" /><br/>'.
+                '<img class="__xe_image" data-id="'.$secondExampleImageInfo['id'].'" src="'.$secondExampleImageInfo['path'].
+                '" xe-file-id="'.$secondExampleImageInfo['id'].'" alt="'.$secondExampleImageInfo['filename'].'" />'
+                .'<p>메인 페이지의 D-Day 배너를 설정하세요.<br/>
 배너 설정은 <a href="'.route('settings.setting.permissions').'" target="_blank">사이트관리 > 플러그인 > 설치된 플러그인 > 배너 설정</a>에서 설정할 수 있습니다.</p>',
             '_coverId' => '',
             'allow_comment' => '1',
@@ -520,9 +530,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '관리페이지 권한 설정하기',
             'slug' => '관리페이지 권한 설정하기',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>사이트의 관리 권한을 설정하세요.<br/>
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>사이트의 관리 권한을 설정하세요.<br/>
 권한 설정은 <a href="'.route('settings.setting.permissions').'" target="_blank">사이트관리 > 설정 > 관리페이지 권한 설정</a>에서 수정할 수 있습니다.</p>',
             '_coverId' => '',
             'allow_comment' => '1',
@@ -544,13 +554,13 @@ class DemoDataManager
         $contents[] = [
             'title' => '플러그인 관리하기',
             'slug' => '플러그인 관리하기',
-            'content' => '<p>스토어에서 플러그인을 설치하여 사이트를 풍성하게 만들어보세요.<br/>' .
-                '<img class="__xe_image" data-id="' . $themeImageInfo['id'] . '" src="' . $themeImageInfo['path'] .
-                '" xe-file-id="' . $themeImageInfo['id'] . '" alt="' . $themeImageInfo['filename'] . '" />'
-                . '<br/>테마는 <a href="'.route('settings.theme.install').'" target="_blank">사이트관리 > 테마 > 테마 추가</a>에서 추가 할 수 있습니다.<br/><br/>'
-                . '<img class="__xe_image" data-id="' . $extensionImageInfo['id'] . '" src="' . $extensionImageInfo['path'] .
-                '" xe-file-id="' . $extensionImageInfo['id'] . '" alt="' . $extensionImageInfo['filename'] . '" />'
-                . '<br/>익스텐션은 <a href="'.route('settings.extension.install').'" target="_blank">사이트관리 > 익스텐션 > 익스텐션 추가</a>에서 추가 할 수 있습니다.</p>',
+            'content' => '<p>스토어에서 플러그인을 설치하여 사이트를 풍성하게 만들어보세요.<br/>'.
+                '<img class="__xe_image" data-id="'.$themeImageInfo['id'].'" src="'.$themeImageInfo['path'].
+                '" xe-file-id="'.$themeImageInfo['id'].'" alt="'.$themeImageInfo['filename'].'" />'
+                .'<br/>테마는 <a href="'.route('settings.theme.install').'" target="_blank">사이트관리 > 테마 > 테마 추가</a>에서 추가 할 수 있습니다.<br/><br/>'
+                .'<img class="__xe_image" data-id="'.$extensionImageInfo['id'].'" src="'.$extensionImageInfo['path'].
+                '" xe-file-id="'.$extensionImageInfo['id'].'" alt="'.$extensionImageInfo['filename'].'" />'
+                .'<br/>익스텐션은 <a href="'.route('settings.extension.install').'" target="_blank">사이트관리 > 익스텐션 > 익스텐션 추가</a>에서 추가 할 수 있습니다.</p>',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -565,9 +575,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '테마 디자인 변경하기',
             'slug' => '테마 디자인 변경하기',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>다른 테마가 필요하신가요? 내가 만든 테마를 적용하고 싶으신가요?<br/><a href="'.route('settings.edit.theme').'" target="_blank">사이트관리 > 테마 > 테마 설정</a>에서 변경할 수 있습니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>다른 테마가 필요하신가요? 내가 만든 테마를 적용하고 싶으신가요?<br/><a href="'.route('settings.edit.theme').'" target="_blank">사이트관리 > 테마 > 테마 설정</a>에서 변경할 수 있습니다.</p>',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -582,9 +592,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '메뉴 구조 구성하기',
             'slug' => '메뉴 구조 구성하기',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>메뉴를 만들어 사이트맵을 구성해보세요.<br/><a href="'.route('settings.menu.index').'" target="_blank">사이트 관리 > 사이트맵 > 사이트메뉴 편집</a>에서 메뉴를 설정합니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>메뉴를 만들어 사이트맵을 구성해보세요.<br/><a href="'.route('settings.menu.index').'" target="_blank">사이트 관리 > 사이트맵 > 사이트메뉴 편집</a>에서 메뉴를 설정합니다.</p>',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -599,9 +609,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '홈 화면 변경하기',
             'slug' => '홈 화면 변경하기',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>사이트 홈을 설정해 보세요.<br/><a href="'.route('settings.menu.index').'" target="_blank">사이트 관리 > 사이트맵 > 사이트 메뉴 편집</a>에서 홈을 설정합니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>사이트 홈을 설정해 보세요.<br/><a href="'.route('settings.menu.index').'" target="_blank">사이트 관리 > 사이트맵 > 사이트 메뉴 편집</a>에서 홈을 설정합니다.</p>',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -616,9 +626,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '사이트 기본 설정을 확인해보세요',
             'slug' => '사이트 기본 설정을 확인해보세요',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>홈페이지 기본 설정을 변경해 보세요.<br/><a href="'.route('settings.setting.edit').'" target="_blank">사이트 관리 > 설정 > 사이트 기본설정</a>에서 사이트 제목을 설정할 수 있습니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>홈페이지 기본 설정을 변경해 보세요.<br/><a href="'.route('settings.setting.edit').'" target="_blank">사이트 관리 > 설정 > 사이트 기본설정</a>에서 사이트 제목을 설정할 수 있습니다.</p>',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -636,20 +646,20 @@ class DemoDataManager
         $contents[] = [
             'title' => 'XE Theme Together를 소개합니다',
             'slug' => 'XE Theme Together를 소개합니다',
-            'content' => '<p>XE3 공식테마 Together를 설치해주셔서 감사합니다.<br/>다양한 게시판 위젯과 디데이, 카테고리 위젯을 제공하고 있습니다.<br/>Together theme로 개성있는 나만의 웹 사이트를 제작해보세요.<br/></p>' .
-                '<p><span style="font-size:16px;"><b>◆ 원하는 형태의 게시판을 게시판 스킨 변경으로 자유롭게 배치해보세요</b></span></p>' .
-                '<img class="__xe_image" data-id="' . $defaultSkinImageInfo['id'] . '" src="' . $defaultSkinImageInfo['path'] .
-                '" xe-file-id="' . $defaultSkinImageInfo['id'] . '" alt="' . $defaultSkinImageInfo['filename'] . '" />' .
-                '<p>리스트형 게시판 (기본)</p>' .
-                '<img class="__xe_image" data-id="' . $gallerySkinImageInfo['id'] . '" src="' . $gallerySkinImageInfo['path'] .
-                '" xe-file-id="' . $gallerySkinImageInfo['id'] . '" alt="' . $gallerySkinImageInfo['filename'] . '" />' .
-                '<p>갤러리형 게시판</p>' .
-                '<img class="__xe_image" data-id="' . $blogSkinImageInfo['id'] . '" src="' . $blogSkinImageInfo['path'] .
-                '" xe-file-id="' . $blogSkinImageInfo['id'] . '" alt="' . $blogSkinImageInfo['filename'] . '" />' .
-                '<p>블로그형 게시판</p>' .
-                '<p><span style="font-size:16px;"><b>◆ D day 위젯을 통해 중요 알림을 공지해보세요</b></span></p>' .
-                '<img class="__xe_image" data-id="' . $ddaySampleImageInfo['id'] . '" src="' . $ddaySampleImageInfo['path'] .
-                '" xe-file-id="' . $ddaySampleImageInfo['id'] . '" alt="' . $ddaySampleImageInfo['filename'] . '" />',
+            'content' => '<p>XE3 공식테마 Together를 설치해주셔서 감사합니다.<br/>다양한 게시판 위젯과 디데이, 카테고리 위젯을 제공하고 있습니다.<br/>Together theme로 개성있는 나만의 웹 사이트를 제작해보세요.<br/></p>'.
+                '<p><span style="font-size:16px;"><b>◆ 원하는 형태의 게시판을 게시판 스킨 변경으로 자유롭게 배치해보세요</b></span></p>'.
+                '<img class="__xe_image" data-id="'.$defaultSkinImageInfo['id'].'" src="'.$defaultSkinImageInfo['path'].
+                '" xe-file-id="'.$defaultSkinImageInfo['id'].'" alt="'.$defaultSkinImageInfo['filename'].'" />'.
+                '<p>리스트형 게시판 (기본)</p>'.
+                '<img class="__xe_image" data-id="'.$gallerySkinImageInfo['id'].'" src="'.$gallerySkinImageInfo['path'].
+                '" xe-file-id="'.$gallerySkinImageInfo['id'].'" alt="'.$gallerySkinImageInfo['filename'].'" />'.
+                '<p>갤러리형 게시판</p>'.
+                '<img class="__xe_image" data-id="'.$blogSkinImageInfo['id'].'" src="'.$blogSkinImageInfo['path'].
+                '" xe-file-id="'.$blogSkinImageInfo['id'].'" alt="'.$blogSkinImageInfo['filename'].'" />'.
+                '<p>블로그형 게시판</p>'.
+                '<p><span style="font-size:16px;"><b>◆ D day 위젯을 통해 중요 알림을 공지해보세요</b></span></p>'.
+                '<img class="__xe_image" data-id="'.$ddaySampleImageInfo['id'].'" src="'.$ddaySampleImageInfo['path'].
+                '" xe-file-id="'.$ddaySampleImageInfo['id'].'" alt="'.$ddaySampleImageInfo['filename'].'" />',
             '_coverId' => $thumbNailInfo['id'],
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -668,9 +678,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '스토어는 왜 베타인가요?',
             'slug' => '스토어는 왜 베타인가요?',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>베타 기간동안 창작자를 위해 플랫폼 수수료를 대폭 낮추고 XEHub에서 기술지원을 드리려고 합니다.<br/>무료, 유료 플러그인이 유통되기 시작하면 정식 오픈을 할 예정이니, 창작자로서 참여하고 싶다면 서두르세요!</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>베타 기간동안 창작자를 위해 플랫폼 수수료를 대폭 낮추고 XEHub에서 기술지원을 드리려고 합니다.<br/>무료, 유료 플러그인이 유통되기 시작하면 정식 오픈을 할 예정이니, 창작자로서 참여하고 싶다면 서두르세요!</p>',
             '_coverId' => '',
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -684,9 +694,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '창작자를 위해 준비했어요!',
             'slug' => '창작자를 위해 준비했어요!',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>XEHub는 창작자분들의 창의성을 응원하고 다양한 프로그램을 통해 열심히 도움을 드립니다.<br/>XE Study에 참여하여 창작자가 될 수 있고, 초기 판매자가 되어 XE의 플러그인 시장을 확보할 수도 있습니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>XEHub는 창작자분들의 창의성을 응원하고 다양한 프로그램을 통해 열심히 도움을 드립니다.<br/>XE Study에 참여하여 창작자가 될 수 있고, 초기 판매자가 되어 XE의 플러그인 시장을 확보할 수도 있습니다.</p>',
             '_coverId' => '',
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -700,9 +710,9 @@ class DemoDataManager
         $contents[] = [
             'title' => 'XE창작자는 무엇인가요?',
             'slug' => 'XE창작자는 무엇인가요?',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>XE Store에서 창작자는 무료로 개발한 플러그인을 오픈소스로 공개하여 사용자의 피드백을 받아볼 수 있고,<br/>유료 플러그인을 게시하여 창작자가 만든 제품의 가치만큼 수익을 얻을 수 있습니다.<br/>여러분의 번뜩이는 아이디어와 지식으로 아직 부족한 XE Store를 가득 채우기를 고대하고 있어요.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>XE Store에서 창작자는 무료로 개발한 플러그인을 오픈소스로 공개하여 사용자의 피드백을 받아볼 수 있고,<br/>유료 플러그인을 게시하여 창작자가 만든 제품의 가치만큼 수익을 얻을 수 있습니다.<br/>여러분의 번뜩이는 아이디어와 지식으로 아직 부족한 XE Store를 가득 채우기를 고대하고 있어요.</p>',
             '_coverId' => '',
             'allow_comment' => '1',
             'use_alarm' => '1',
@@ -716,9 +726,9 @@ class DemoDataManager
         $contents[] = [
             'title' => '스토어는 어떤 공간인가요?',
             'slug' => '스토어는 어떤 공간인가요?',
-            'content' => '<img class="__xe_image" data-id="' . $exampleImageInfo['id'] . '" src="' . $exampleImageInfo['path'] .
-                '" xe-file-id="' . $exampleImageInfo['id'] . '" alt="' . $exampleImageInfo['filename'] . '" />'
-                . '<p>창작자는 자신이 만든 플러그인을 공개하거나 판매할 수 있고,<br/>XE3 사용자는 Store를 통해 마음에 드는 플러그인을 골라 웹사이트의 기능을 확장하고 아름답게 꾸밀 수 있습니다.</p>',
+            'content' => '<img class="__xe_image" data-id="'.$exampleImageInfo['id'].'" src="'.$exampleImageInfo['path'].
+                '" xe-file-id="'.$exampleImageInfo['id'].'" alt="'.$exampleImageInfo['filename'].'" />'
+                .'<p>창작자는 자신이 만든 플러그인을 공개하거나 판매할 수 있고,<br/>XE3 사용자는 Store를 통해 마음에 드는 플러그인을 골라 웹사이트의 기능을 확장하고 아름답게 꾸밀 수 있습니다.</p>',
             '_coverId' => '',
             'allow_comment' => '1',
             'use_alarm' => '1',

@@ -64,14 +64,17 @@
       }
     }
   },
+  "autoload": {
+    "psr-4": {
+      "Xpressengine\\Plugins\\Together\\": "./"
+    }
+  },
   "require": {
     "xpressengine/xpressengine": "^3.0.2",
     "xpressengine-plugin/board": "*",
     "xpressengine-plugin/banner": "*"
   },
-  "autoload": {
-    "psr-4": {
-      "Xpressengine\\Plugins\\Together\\": "./"
-    }
+  "require-dev": {
+    "laravel/pint": "^1.0"
   }
 }
