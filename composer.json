@@ -70,9 +70,9 @@
     }
   },
   "require": {
-    "nineboard/nineboard": "dev-main",
-    "nineboard/plugin-board": "dev-main",
-    "nineboard/plugin-banner": "dev-main"
+    "nineboard/nineboard": "^3.0.0",
+    "nineboard/plugin-board": "^1.0.0",
+    "nineboard/plugin-banner": "^1.0.0"
   },
   "require-dev": {
     "laravel/pint": "^1.0"
